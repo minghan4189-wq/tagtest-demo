@@ -1,0 +1,14 @@
+{
+  "name": "tagtest-demo",
+  "version": "1.0.0",
+  "description": "爆款带新品·测图作战台 demo：账号 ID + 服务端按账号持久化（Render 免费试用；磁盘非持久）",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

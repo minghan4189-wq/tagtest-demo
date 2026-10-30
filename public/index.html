@@ -1,0 +1,3000 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-skin="inkblue">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>爆款带新品 · 测图作战台 v2</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root,html[data-skin="inkblue"]{ --b-deep:#132339; --b-mid:#1d3559; --b-far:#2c527c; --b-th:#16263e; --pg:#ebecef; --pg2:#e2e4e9; }
+html[data-skin="inkgreen"]{ --b-deep:#0e2a22; --b-mid:#173b30; --b-far:#1f5544; --b-th:#123026; --pg:#eaeeeb; --pg2:#e0e6e2; }
+html[data-skin="graphite"]{ --b-deep:#17171a; --b-mid:#26262b; --b-far:#3a3a40; --b-th:#1c1c20; --pg:#ececec; --pg2:#e3e3e4; }
+html[data-skin="warm"]{ --b-deep:#211d16; --b-mid:#3d3423; --b-far:#5f4a20; --b-th:#211d16; --pg:#eeeae2; --pg2:#e5e0d5; }
+:root{
+  --gold:#c8963e; --gold-hi:#dcae52; --gold-soft:#f7ecd6; --gold-line:#e2d3b0;
+  --panel:#ffffff; --panel2:#f6f3ec;
+  --line:#e6e0d3; --line2:#d5cbb6;
+  --ink:#1b1b1a; --sub:#57544c; --mut:#847b68;
+  --green:#3f8f5b; --blue:#3a6ea5; --orange:#cf8a2c; --red:#c0492f;
+  --shadow:0 1px 2px rgba(20,20,18,.05),0 4px 14px rgba(20,20,18,.05);
+  --font-sans:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  --fs-display:32px; --fs-metric:28px; --fs-title:22px; --fs-lg:18px; --fs-sub:15.5px;
+  --fs-body:14.5px; --fs-sm:13px; --fs-xs:12px; --fs-badge:11px;
+  --lh-tight:1.25; --lh-snug:1.5; --lh-base:1.7; --lh-relax:1.85;
+  --r-xs:6px; --r-sm:8px; --r-md:12px; --r-lg:16px;
+}
+body{background:var(--pg);color:var(--ink);font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-base);letter-spacing:.2px;-webkit-font-smoothing:antialiased}
+
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1560px;margin:0 auto;padding:10px 26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-size:14px;font-weight:800;color:var(--b-deep);letter-spacing:.5px;white-space:nowrap}
+.nav{display:flex;gap:3px;flex-wrap:wrap}
+.nav a{font-size:var(--fs-sm);color:var(--sub);font-weight:600;padding:6px 11px;border-radius:var(--r-sm);border:1px solid transparent}
+.nav a:hover{background:var(--gold-soft);color:var(--ink)}
+.skins{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap}
+.sk{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:11.5px;font-weight:600;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:18px;padding:4px 11px 4px 5px;cursor:pointer}
+.sk i{width:18px;height:18px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.12)}
+.sk.on{border-color:var(--b-deep);background:var(--b-deep);color:#fff}
+
+.ph{background:linear-gradient(120deg,var(--b-deep),var(--b-mid) 58%,var(--b-far));color:#f7efdd;padding:34px 26px 26px;border-bottom:3px solid var(--gold)}
+.ph .tag{display:inline-block;background:var(--gold);color:#fff;font-weight:700;font-size:12px;letter-spacing:.5px;padding:3px 12px;border-radius:20px;margin-bottom:12px}
+.ph h1{font-size:var(--fs-display);font-weight:800;line-height:var(--lh-tight);color:#fff;margin-bottom:8px}
+.ph p{color:#d5cfc0;font-size:var(--fs-body);line-height:var(--lh-relax);max-width:1000px}
+.ph .kv{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px}
+.ph .kv div{font-size:12px;color:#bdb8ab}
+.ph .kv div b{display:block;font-size:20px;font-weight:800;color:var(--gold-hi);line-height:var(--lh-tight);font-variant-numeric:tabular-nums}
+
+.wrap{max-width:1560px;margin:0 auto;padding:0 26px 70px}
+section{margin-top:30px}
+.sec-t{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sec-t .n{font-size:25px;font-weight:800;color:var(--gold);line-height:1;padding:0 2px 0 12px;border-left:4px solid var(--gold)}
+.sec-t h2{font-size:var(--fs-title);font-weight:700;color:var(--ink);letter-spacing:.3px}
+.hint{font-size:13px;color:var(--sub);line-height:var(--lh-relax);margin-bottom:14px}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:18px 20px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ax{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--r-md);padding:13px 15px;box-shadow:var(--shadow)}
+.ax b{display:block;color:var(--ink);font-size:var(--fs-sub);font-weight:700;margin-bottom:4px}
+.ax p{color:var(--sub);font-size:var(--fs-xs);line-height:var(--lh-base)}
+
+table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+th{background:var(--b-th);color:#f4ecdb;font-size:var(--fs-xs);font-weight:600;letter-spacing:.5px;text-align:left;padding:11px 13px;white-space:nowrap}
+td{padding:11px 13px;border-top:1px solid var(--line);color:var(--ink);vertical-align:top}
+tbody tr:nth-child(even) td{background:#fbfaf6}
+.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.tblwrap{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow);overflow:hidden}
+.scrollx{overflow-x:auto}
+.tag{display:inline-block;font-size:var(--fs-xs);font-weight:700;padding:2px 9px;border-radius:var(--r-xs);border:1px solid;white-space:nowrap}
+.tag.g{background:#e7f0e9;color:var(--green);border-color:#bcd6c2}
+.tag.a{background:#fff2cc;color:#9a6b00;border-color:#e6cf8a}
+.tag.r{background:#fbeae3;color:var(--red);border-color:#e7b9a8}
+.note{display:flex;gap:10px;border-radius:var(--r-sm);padding:11px 14px;font-size:var(--fs-sm);line-height:var(--lh-base);margin-top:10px;border-left:3px solid currentColor}
+.note.w{background:#fff8e1;border-color:#e6cf8a;color:#8a6200}
+.note.k{background:#e7f0e9;border-color:#bcd6c2;color:#34774e}
+.note.b{background:#eef2f8;border-color:#a9bcd4;color:#2c4a70}
+.note .ic{font-weight:700;flex:none}
+.note b{font-weight:700}
+
+/* 标准表单 */
+.stdf{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.fld label{display:block;font-size:var(--fs-xs);color:var(--sub);font-weight:600;margin-bottom:5px}
+.fld input,.fld select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r-sm);font-family:inherit;font-size:var(--fs-sm);background:var(--panel);color:var(--ink)}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,150,62,.18)}
+.fld .u{font-size:11px;color:var(--mut);margin-top:3px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.btn{background:var(--gold);color:#fff;border:none;border-radius:var(--r-sm);padding:9px 16px;font-family:inherit;font-size:var(--fs-sm);font-weight:700;cursor:pointer;transition:.15s;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.btn:hover{background:var(--gold-hi);transform:translateY(-1px);box-shadow:0 3px 9px rgba(200,150,62,.34)}
+.btn.ghost{background:transparent;border:1px solid var(--gold);color:var(--gold);box-shadow:none}
+.btn.ghost:hover{background:var(--gold-soft);transform:none}
+.btn.danger{background:transparent;border:1px solid #e7b9a8;color:var(--red);box-shadow:none}
+.btn.danger:hover{background:#fbeae3;transform:none}
+.stdline{font-size:var(--fs-xs);color:var(--mut);margin-left:6px}
+
+/* 上传 */
+.drop{display:flex;align-items:center;gap:9px;flex-wrap:wrap;border:1px dashed var(--gold-line);border-radius:var(--r-sm);padding:9px 14px;background:var(--panel2);cursor:pointer;transition:.15s;margin-bottom:4px}
+.drop:hover,.drop.on{background:var(--gold-soft);border-color:var(--gold)}
+.drop b{color:var(--ink);font-size:var(--fs-sm);font-weight:700;white-space:nowrap}
+.drop span{color:var(--mut);font-size:var(--fs-xs);line-height:1.5}
+.cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px}
+.cc{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow)}
+.cc .thumb{position:relative;aspect-ratio:1/1;height:auto;background:var(--pg2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cc .thumb img{width:100%;height:100%;object-fit:cover}
+.cc .thumb .noimg{color:var(--mut);font-size:var(--fs-xs)}
+.cc .dim{position:absolute;right:6px;bottom:6px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:5px;font-size:10.5px;font-weight:700;color:var(--sub);padding:1px 6px;letter-spacing:.2px}
+.cc .dim.bad{color:var(--red);border-color:#e7b9a8;background:#fbeae3}
+.cc .thumb.empty{box-shadow:inset 0 0 0 1px var(--line2)}
+.cc .thumb[data-up]{cursor:pointer}
+.cc .slot{display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--mut)}
+.cc .slot .plus{font-size:26px;font-weight:300;color:var(--gold);line-height:1}
+.cc .slot .tip{font-size:11.5px;text-align:center;line-height:1.5}
+.cc .acts{display:flex;gap:5px}
+.cc .acts button{flex:1;border-radius:6px;padding:4px;font-size:11.5px;cursor:pointer;font-family:inherit;font-weight:700;border:1px solid var(--gold-line);background:var(--gold-soft);color:var(--ink)}
+.cc .acts .up:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.cc .acts .del{border-color:#e7b9a8;background:transparent;color:var(--red);font-weight:600}
+.cc .acts .del:hover{background:#fbeae3}
+.cc .body{padding:10px 11px}
+.cc .ver{display:inline-block;background:var(--gold-soft);color:var(--ink);border:1px solid var(--gold-line);font-weight:800;font-size:11.5px;border-radius:var(--r-xs);padding:1px 8px;margin-bottom:6px}
+.cc input{width:100%;border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:var(--fs-xs);font-family:inherit;color:var(--ink);margin-bottom:5px;background:var(--panel)}
+.cc input:focus{outline:none;border-color:var(--gold)}
+.cc .del{width:100%;background:transparent;border:1px solid #e7b9a8;color:var(--red);border-radius:6px;padding:4px;font-size:11.5px;cursor:pointer;font-family:inherit}
+.cc .del:hover{background:#fbeae3}
+
+/* 数据 */
+.rowform{display:grid;grid-template-columns:repeat(11,1fr);gap:9px;align-items:end}
+.rowform .fld input,.rowform .fld select{padding:8px 9px;font-size:var(--fs-xs)}
+.dtwrap{margin-top:14px}
+.dt td{white-space:nowrap;text-align:center}
+.dt th{text-align:center}
+.dt .num{text-align:center;font-variant-numeric:tabular-nums}
+.sum{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:14px}
+.sbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:13px 15px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.sbox:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--b-deep)}
+.sbox b{display:block;font-size:var(--fs-xs);color:var(--sub);font-weight:600;margin-bottom:4px;letter-spacing:.3px}
+.sbox .big{font-size:22px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.2}
+.sbox .sm{font-size:11.5px;color:var(--mut);margin-top:3px}
+.verdict{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:var(--r-md);background:var(--panel);padding:16px 18px;box-shadow:var(--shadow);margin-top:14px}
+.verdict b{display:block;font-size:var(--fs-sub);font-weight:700;margin-bottom:5px}
+.verdict p{font-size:var(--fs-sm);color:var(--sub);line-height:var(--lh-relax)}
+.verdict p b{display:inline;font-weight:700;color:var(--ink)}
+.empty{color:var(--mut);font-size:var(--fs-xs);padding:16px;text-align:center;border:1px dashed var(--line2);border-radius:var(--r-md);background:var(--panel2)}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-top:16px;border-bottom:1px solid var(--line)}
+.tab{background:transparent;border:1px solid transparent;border-bottom:2px solid transparent;color:var(--sub);font-family:inherit;font-size:var(--fs-sm);font-weight:700;padding:8px 15px;border-radius:8px 8px 0 0;cursor:pointer;transition:.15s}
+.tab:hover{background:var(--gold-soft);color:var(--ink)}
+.tab.on{background:var(--panel);border-color:var(--line);border-bottom-color:var(--gold);color:var(--ink)}
+.pane{margin-top:12px}
+.pmeta{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:12px}
+.pm{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:9px 11px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.pm:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--b-deep)}
+.pm b{display:block;font-size:11px;color:var(--mut);font-weight:600;margin-bottom:2px}
+.pm span{font-size:16px;font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.gtabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 10px}
+.gt{background:var(--panel);border:1px solid var(--line);color:var(--sub);font-family:inherit;font-size:var(--fs-xs);font-weight:700;padding:7px 14px;border-radius:20px;cursor:pointer;transition:.15s}
+.gt:hover{border-color:var(--gold);color:var(--ink)}
+.gt.on{background:var(--b-deep);border-color:var(--b-deep);color:#fff}
+.gt.add{border-style:dashed;color:var(--mut)}
+table.plan td{padding:7px 8px}
+table.plan td input{width:100%;border:1px solid transparent;background:transparent;font-family:inherit;font-size:var(--fs-sm);color:var(--ink);padding:5px 7px;border-radius:6px;line-height:1.5}
+table.plan td input::placeholder{color:#b9b1a0}
+table.plan td input:hover{border-color:var(--line)}
+table.plan td input:focus{outline:none;border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(200,150,62,.14)}
+table.board{font-size:var(--fs-xs);min-width:900px}
+table.board th small{display:block;font-weight:400;color:#c9c1ae;font-size:10px;letter-spacing:0}
+table.board tr.thr td{background:#2a2110;padding:5px 7px;border-top:none}
+table.board tr.thr input{width:100%;min-width:58px;border:1px solid var(--line);border-radius:5px;padding:3px 6px;font-size:11px;font-family:inherit;background:#fff;color:var(--ink)}
+table.board td.bc{position:relative;text-align:right;font-variant-numeric:tabular-nums;min-width:76px;padding:7px 10px}
+table.board td.bc .bar{position:absolute;left:2px;top:3px;bottom:3px;background:var(--gold-soft);border-radius:4px;z-index:0}
+table.board td.bc .v{position:relative;z-index:1}
+table.board td.bc.hit .bar{background:linear-gradient(90deg,#f6e2a8,#e9c979)}
+table.board td.bc.hit .v{font-weight:800;color:#7a4e0b}
+.cntpill{display:inline-block;min-width:26px;text-align:center;background:var(--b-mid);color:#fff;border-radius:6px;padding:2px 8px;font-weight:800;font-size:11.5px}
+.cntpill.zero{background:#ded9cc;color:#6b6557}
+.bcust{display:none;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.mchips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.mc{background:var(--panel);border:1px solid var(--line);color:var(--sub);font-family:inherit;font-size:var(--fs-xs);font-weight:700;padding:6px 13px;border-radius:20px;cursor:pointer;transition:.15s}
+.mc:hover{border-color:var(--gold);color:var(--ink)}
+.mc.on{background:var(--b-deep);border-color:var(--b-deep);color:#fff}
+.chd{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.ctype{display:flex;gap:4px}
+.ctype button{background:transparent;border:1px solid var(--line);color:var(--sub);font-family:inherit;font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:6px;cursor:pointer}
+.ctype button.on{background:var(--gold-soft);border-color:var(--gold-line);color:var(--ink)}
+.charts{display:block;margin-bottom:12px}
+.chartbox{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px 8px;box-shadow:var(--shadow)}
+.chartbox h5{font-size:var(--fs-sm);color:var(--ink);font-weight:700;margin-bottom:4px}
+.emptychart{color:var(--mut);font-size:var(--fs-xs);padding:46px 0;text-align:center}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--b-deep);color:#fff;padding:9px 20px;border-radius:20px;font-size:var(--fs-sm);opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.toast.on{opacity:1}
+
+/* 创意框架 */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:6px}
+.step{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--b-deep);border-radius:var(--r-md);padding:12px 13px;box-shadow:var(--shadow)}
+.step b{display:block;font-size:var(--fs-sm);color:var(--ink);font-weight:700;margin-bottom:4px}
+.step span{font-size:11.5px;color:var(--sub);line-height:1.6}
+.chks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.chk{display:flex;gap:9px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px;font-size:var(--fs-sm);color:var(--sub);cursor:pointer}
+.chk input{margin-top:3px;accent-color:var(--gold);width:15px;height:15px;flex:none}
+.chk:has(input:checked){border-color:#bcd6c2;background:#f3f8f4;color:var(--ink)}
+.pipe{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px}
+.pipe span{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:var(--fs-xs);font-weight:600;color:var(--ink)}
+.pipe i{color:var(--gold);font-style:normal;font-weight:700}
+
+.foot{margin-top:44px;text-align:center;color:var(--mut);font-size:11.5px;border-top:1px solid var(--line);padding-top:16px}
+@media(max-width:1180px){.pmeta{grid-template-columns:repeat(4,1fr)}.grid3,.stdf,.cgrid,.sum,.steps{grid-template-columns:1fr 1fr}.rowform{grid-template-columns:1fr 1fr 1fr}.chks{grid-template-columns:1fr}}
+@media(max-width:680px){.pmeta{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.stdf,.cgrid,.sum,.steps,.rowform{grid-template-columns:1fr}.ph h1{font-size:24px}.wrap{padding:0 14px 46px}.nav{display:none}}
+@media print{.top,.btnrow,.drop,.cc .del,.rowform,.skins{display:none!important}body{background:#fff}}
+
+/* ===== 双页面窗口（模块一 / 模块二） ===== */
+.page{display:none}
+.page.on{display:block}
+.mods{display:flex;gap:5px;background:var(--panel2);border:1.5px solid #d8cfba;border-radius:13px;padding:4px;flex-shrink:0;box-shadow:0 2px 8px rgba(27,35,57,.10)}
+.mod{display:flex;align-items:center;gap:8px;border:1.5px solid transparent;background:transparent;font-family:inherit;font-size:var(--fs-sm);font-weight:800;color:var(--sub);padding:5px 16px 5px 6px;border-radius:10px;cursor:pointer;white-space:nowrap;transition:.15s;letter-spacing:.3px}
+.mod b{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border-radius:8px;background:#e7e0d0;color:#7a6f57;font-size:13px;font-weight:800;padding:0 5px}
+.mod:hover{color:var(--ink);background:var(--panel);border-color:var(--line)}
+.mod.on{background:linear-gradient(135deg,var(--b-deep),#1d3a63);color:#fff;border-color:var(--b-deep);box-shadow:0 3px 12px rgba(19,35,57,.32)}
+.mod.on b{background:var(--gold);color:#201a08;box-shadow:0 1px 4px rgba(201,162,39,.45)}
+/* 装配 6 项微勾选 */
+.ck6{display:flex;gap:3px;flex-wrap:wrap}
+.ck6 label{display:inline-flex;align-items:center;gap:2px;font-size:11px;line-height:1;color:var(--sub);background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:3px 5px;cursor:pointer;white-space:nowrap}
+.ck6 label:hover{border-color:var(--gold)}
+.ck6 label.on{background:var(--gold-soft);border-color:var(--gold-line);color:var(--ink);font-weight:800}
+.ck6 input{width:11px;height:11px;margin:0;accent-color:var(--b-deep);cursor:pointer}
+/* 状态徽标 */
+.stg{display:inline-block;border-radius:20px;padding:3px 10px;font-size:11.5px;font-weight:800;white-space:nowrap}
+.stg.wait{background:#ede9df;color:#6b6557}
+.stg.ready{background:var(--gold-soft);color:#8a6a1f;border:1px solid var(--gold-line)}
+.stg.live{background:#e2efe8;color:#2c6b4a}
+.stg.out{background:#fbeae3;color:#a8452c}
+.del2{border:1px solid #e7b9a8;background:transparent;color:var(--red);border-radius:6px;padding:3px 9px;font-size:11.5px;cursor:pointer;font-family:inherit}
+.del2:hover{background:#fbeae3}
+
+/* ===== 链接窗口（模块二 ⑨）· 每条链接一个 sheet 页签 ===== */
+.lk-sheets{margin-top:16px}
+.lk-tabsbar{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;border-bottom:2px solid var(--line,#e6e0d3);padding-bottom:0}
+.lktabs{display:flex;gap:5px;flex-wrap:wrap;flex:1 1 auto}
+.lkt{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line,#e6e0d3);border-bottom:2px solid transparent;background:var(--panel2,#f6f3ec);color:var(--sub,#57544c);font-family:inherit;font-size:var(--fs-sm);font-weight:700;padding:8px 14px;border-radius:10px 10px 0 0;cursor:pointer;transition:.15s;position:relative;top:2px;white-space:nowrap}
+.lkt b{color:inherit;font-weight:800;letter-spacing:.3px}
+.lkt i{font-style:normal;font-weight:600;font-size:11.5px;color:var(--mut,#847b68);max-width:120px;overflow:hidden;text-overflow:ellipsis}
+.lkt:hover{border-color:var(--gold,#c9a227);color:var(--ink,#1b1b1a)}
+.lkt.on{background:var(--panel,#fff);color:var(--b-deep,#132339);border-color:var(--line,#e6e0d3);border-bottom-color:var(--panel,#fff);box-shadow:inset 0 3px 0 var(--gold,#c9a227)}
+.lkt .dot{width:7px;height:7px;border-radius:50%;display:inline-block;flex:0 0 auto}
+.lkt .dot.has{background:#2c6b4a}
+.lkt .dot.no{background:#c9c1ae}
+.lk-step{display:flex;align-items:center;gap:6px;padding-bottom:8px;font-size:12px;color:var(--mut,#847b68)}
+.lk-step button{border:1px solid var(--line,#e6e0d3);background:var(--panel,#fff);color:var(--sub,#57544c);border-radius:6px;width:26px;height:26px;cursor:pointer;font-family:inherit;font-size:12px;line-height:1}
+.lk-step button:hover{border-color:var(--gold,#c9a227);color:var(--ink,#1b1b1a)}
+#lkPane .lkw{margin-top:0;border-top-left-radius:0;border-top-right-radius:var(--r-lg,12px)}
+.lkt.loc{background:var(--gold,#c9a227);color:#fff;border-color:var(--gold,#c9a227)}
+.lkt.loc i{color:#fff;opacity:.9}
+.lkt.loc:hover{color:#fff;border-color:var(--gold-hi,#dcae52)}
+.lkt.loc.on{background:var(--gold,#c9a227);color:#fff;box-shadow:inset 0 3px 0 var(--b-deep,#132339)}
+.lkt.sum{background:var(--b-deep,#132339);color:#fff;border-color:var(--b-deep,#132339)}
+.lkt.sum i{color:var(--gold-soft,#f7ecd6)}
+.lkt.sum:hover{color:#fff;border-color:var(--gold,#c9a227)}
+.lkt.sum.on{background:var(--b-deep,#132339);color:#fff;box-shadow:inset 0 3px 0 var(--gold,#c9a227)}
+.lkt.sum.on em{color:var(--gold-soft,#f7ecd6)}
+.lkt.sum em{font-style:normal;font-size:11.5px;font-weight:600;opacity:.85}
+.lksum .lkw-kpi div b{color:var(--mut,#847b68)}
+.lk-flt-t{display:flex;align-items:baseline;gap:9px;font-size:var(--fs-sm);font-weight:800;color:var(--ink,#1b1b1a);margin:14px 0 6px;padding-left:9px;border-left:3px solid var(--gold,#c9a227)}
+.lk-flt-t span{font-size:11.5px;font-weight:600;color:var(--mut,#847b68)}
+/* 汇总对比表：压到一屏放得下，不出横向滚动 */
+#poolTable{width:100%;min-width:0;table-layout:auto;font-size:11px}
+#poolTable th,#poolTable td{padding:4px 5px;line-height:1.35}
+#poolTable th{font-size:10.5px;letter-spacing:0}
+#poolTable td:first-child,#poolTable th:first-child{padding-left:8px}
+/* 指标说明（可展开） */
+.mhelp{margin:10px 0 0;border:1px dashed #d5cbb6;border-radius:var(--r-md,8px);background:var(--panel2,#faf7f0)}
+.mhelp summary{cursor:pointer;padding:9px 13px;font-size:12.5px;font-weight:800;color:var(--sub,#57544c);letter-spacing:.4px;user-select:none;list-style-position:inside}
+.mhelp summary b{color:var(--b-deep,#132339)}
+.mhelp summary::marker{color:var(--gold,#c9a227)}
+.mhelp[open] summary{border-bottom:1px dashed #d5cbb6}
+.mhelp .mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:3px 26px;padding:10px 16px 12px}
+.mhelp .mg p{margin:0;font-size:11.5px;color:var(--sub,#57544c);line-height:1.75}
+.mhelp .mg p b{color:var(--ink,#1b1b1a);font-weight:800}
+.mhelp .mg p i{font-style:normal;color:#a3801d;font-weight:800}
+.lk-flt{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:end;background:var(--panel2,#f6f3ec);border:1px dashed var(--line2,#d5cbb6);border-radius:var(--r-md,8px);padding:10px 12px;margin:12px 0 10px}
+.lk-flt .fld label{font-size:11px;white-space:nowrap}
+.lk-flt input{padding:7px 8px;font-size:var(--fs-xs)}
+.lk-flt .ctype button{padding:6px 10px;font-size:11.5px}
+.lk-flt .ro{font-size:11.5px;color:var(--sub,#57544c);line-height:1.7}
+.lk-flt .ro b{color:var(--ink,#1b1b1a);font-variant-numeric:tabular-nums}
+@media(max-width:1200px){.lk-flt{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:680px){.lk-flt{grid-template-columns:repeat(2,1fr)}}
+.lk-empty{background:var(--panel,#fff);border:1px solid var(--line,#e6e0d3);border-radius:var(--r-lg,12px);padding:26px;text-align:center;color:var(--mut,#847b68);font-size:var(--fs-sm)}
+.lk-status{display:flex;align-items:center;gap:8px;font-size:var(--fs-sm);color:var(--sub);background:var(--panel2,#f6f3ec);border:1px solid var(--line,#e6e0d3);border-left:3px solid var(--gold,#c9a227);border-radius:var(--r-sm,6px);padding:8px 12px;margin:4px 0 6px}
+.lk-status b{color:var(--ink,#1b1b1a);font-variant-numeric:tabular-nums}
+.lk-status.empty{border-left-color:#b9b2a1;color:var(--mut,#847b68)}
+.lkw,.lkbox{background:var(--panel,#fff);border:1px solid var(--line,#e6e0d3);border-top:3px solid var(--b-deep,#132339);min-height:40px;border-radius:var(--r-lg);padding:16px 18px;margin-top:16px;box-shadow:var(--shadow)}
+.lkw-h{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px dashed var(--line2)}
+.lkw-h .id{font-size:var(--fs-sub);font-weight:800;color:var(--b-deep);letter-spacing:.5px}
+.lkw-h .vv{font-weight:700;color:var(--ink);font-size:var(--fs-sm)}
+.lkw-h .meta{font-size:11.5px;color:var(--mut);margin-left:auto;text-align:right;line-height:1.7}
+.lkw-kpi{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:12px 0}
+.lkw-kpi div{background:var(--panel2);border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 10px}
+.lkw-kpi b{display:block;font-size:11px;color:var(--mut);font-weight:600;margin-bottom:2px}
+.lkw-kpi span{font-size:var(--fs-sm);font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+.lkw-kpi div.hi{background:var(--gold-soft);border-color:var(--gold-line)}
+.lkw-kpi div.hi span{color:#8a6a1f}
+.lkw-form{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;align-items:end;background:var(--panel2);border:1px dashed var(--line2);border-radius:var(--r-md);padding:10px 11px}
+.lkw-form .fld label{font-size:11px}
+.lkw-form input{padding:6px 7px;font-size:var(--fs-xs)}
+.lkw-tool{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0 8px}
+.lkw-tool .mchips{margin:0}
+.lkw-chart{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);padding:10px 12px 6px}
+@media(max-width:1100px){.lkw-kpi{grid-template-columns:repeat(4,1fr)}.lkw-form{grid-template-columns:repeat(5,1fr)}}
+@media(max-width:680px){.lkw-kpi{grid-template-columns:repeat(2,1fr)}.lkw-form{grid-template-columns:repeat(2,1fr)}}
+/* ===== 模块一：每块一个独立 sheet 窗口（只切显隐，不销毁 DOM） ===== */
+.m1-tabs{display:flex;gap:5px;flex-wrap:wrap;margin:20px 0 0;border-bottom:2px solid var(--line,#e6e0d3)}
+.m1t{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line,#e6e0d3);border-bottom:2px solid transparent;background:var(--panel2,#f6f3ec);color:var(--sub,#57544c);font-family:inherit;font-size:var(--fs-sm);font-weight:700;padding:8px 13px;border-radius:10px 10px 0 0;cursor:pointer;transition:.15s;position:relative;top:2px;white-space:nowrap}
+.m1t b{color:var(--gold,#c9a227);font-weight:800;font-size:13px}
+.m1t:hover{border-color:var(--gold,#c9a227);color:var(--ink,#1b1b1a)}
+.m1t.on{background:var(--panel,#fff);color:var(--b-deep,#132339);border-color:var(--line,#e6e0d3);border-bottom-color:var(--panel,#fff);box-shadow:inset 0 3px 0 var(--gold,#c9a227)}
+.m1pane{display:none}
+.m1pane.on{display:block}
+
+/* ================= 版面升级 v2：主次分明 + 呼吸感 ================= */
+/* 容器：两侧留白加大 */
+.wrap{max-width:1600px;padding:0 34px 90px}
+.top-in{max-width:1600px;padding:11px 34px;gap:16px}
+
+/* HERO：加高、标题更大、右侧极淡金色光晕 */
+.ph{padding:46px 34px 40px;position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;right:-90px;top:-100px;width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,39,.15),transparent 68%);pointer-events:none}
+.ph .tag{font-size:12px;letter-spacing:1px;padding:4px 14px;margin-bottom:16px}
+.ph h1{font-size:42px;line-height:1.14;letter-spacing:-.5px;margin-bottom:12px}
+.ph p{font-size:15px;line-height:1.85;max-width:820px;color:#cfc9ba}
+
+/* KPI：从"左上角四个小字"改成一条数据带（竖分隔 + 31px 大数字） */
+.ph .kv{display:flex;flex-wrap:wrap;margin-top:30px;padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.14);max-width:1020px}
+.ph .kv>div{flex:1 1 0;min-width:128px;padding:0 26px;border-left:1px solid rgba(255,255,255,.13);
+  font-size:11.5px;letter-spacing:.8px;color:#a9a496}
+.ph .kv>div:first-child{padding-left:0;border-left:0}
+.ph .kv div b{font-size:31px;margin-top:6px;line-height:1.1;letter-spacing:-.4px}
+
+/* 状态行：从"整条浅黄底"降为轻提示，别再和页签栏挤 */
+.lk-status{background:transparent;border:0;border-left:2px solid var(--gold-line,#e2d3b0);
+  border-radius:0;padding:2px 0 2px 11px;font-size:12.5px;color:var(--mut,#847b68);margin:4px 0 10px}
+.lk-status b{color:var(--ink,#1b1b1a)}
+
+/* 页签：加高加宽，更像工作表标签 */
+.m1-tabs{margin-top:28px}
+.m1t{padding:10px 16px;font-size:13.5px}
+.m1t b{font-size:14px}
+.lkt{padding:10px 16px;font-size:13.5px}
+
+/* 章节标题与卡片：加一档 */
+section{margin-top:26px}
+.sec-t h2{font-size:24px}
+.sec-t .n{font-size:28px;padding:0 3px 0 14px}
+.card{padding:22px 24px}
+#lkPane .lkbox,#lkPane .lkw{padding:22px 24px}
+
+/* 模块切换按钮更醒目 */
+.mod{padding:6px 18px 6px 7px}
+.mod b{min-width:26px;height:26px;font-size:13.5px}
+/* ===== ⑧ 测试款总览 ===== */
+.tstat{display:flex;flex-wrap:wrap;background:var(--panel,#fff);border:1px solid var(--line,#e6e0d3);border-left:3px solid var(--gold,#c9a227);border-radius:var(--r-md,8px);padding:13px 0;margin:4px 0 18px}
+.tstat>div{flex:1 1 0;min-width:110px;padding:0 20px;border-left:1px solid var(--line,#e6e0d3)}
+.tstat>div:first-child{border-left:0}
+.tstat b{display:block;font-size:11.5px;color:var(--mut,#847b68);font-weight:600;margin-bottom:4px;letter-spacing:.4px}
+.tstat span{font-size:22px;font-weight:800;color:var(--ink,#1b1b1a);font-variant-numeric:tabular-nums;letter-spacing:-.3px}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:1180px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.tgrid{grid-template-columns:1fr}}
+.tcard{background:var(--panel,#fff);border:1px solid var(--line,#e6e0d3);border-radius:var(--r-lg,12px);overflow:hidden;box-shadow:var(--shadow)}
+.tcard .im{position:relative;width:100%;aspect-ratio:1/1;background:var(--panel2,#f6f3ec);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tcard .im img{width:100%;height:100%;object-fit:cover;display:block}
+.tcard .im .noimg{font-size:12px;color:var(--mut,#847b68);letter-spacing:.5px}
+.tcard .hd{display:flex;align-items:center;gap:8px;padding:10px 13px;border-bottom:1px dashed var(--line2,#d5cbb6);background:var(--panel,#fff)}
+.tcard .hd b{font-size:15px;font-weight:800;color:var(--b-deep,#132339)}
+.tcard .hd span{font-size:12.5px;color:var(--sub,#57544c);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tcard .hd em{margin-left:auto;font-style:normal;font-size:10.5px;color:var(--mut,#847b68);background:var(--panel2,#f6f3ec);padding:3px 8px;border-radius:10px;white-space:nowrap}
+.tcard .kv2{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line,#e6e0d3)}
+.tcard .kv2>div{background:var(--panel,#fff);padding:7px 8px}
+.tcard .kv2>b{display:none}
+.tcard .kv2 div b{display:block;font-size:10.5px;color:var(--mut,#847b68);font-weight:600;margin-bottom:3px;letter-spacing:.3px}
+.tcard .kv2 div span{font-size:13.5px;font-weight:800;color:var(--ink,#1b1b1a);font-variant-numeric:tabular-nums;letter-spacing:-.2px}
+.tcard .kv2 div span.zero{color:#b9b2a1}
+/* ===== 链接定位与视觉资产 ===== */
+.lkw-id{margin-top:12px;padding:12px 14px;background:var(--panel2,#f6f3ec);border:1px dashed var(--line2,#d5cbb6);border-radius:var(--r-md,8px)}
+.lkw-id .posrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.lkw-id .posrow label{font-size:11.5px;font-weight:800;color:var(--b-deep,#132339);white-space:nowrap;letter-spacing:.3px}
+.lkw-id .posrow input{flex:1 1 auto;padding:8px 11px;font-size:var(--fs-xs);border:1px solid var(--line,#e6e0d3);border-radius:6px;font-family:inherit;background:var(--panel,#fff)}
+.lkw-id .posrow input:focus{outline:none;border-color:var(--gold,#c9a227)}
+.asrow{display:flex;gap:18px;align-items:stretch;flex-wrap:wrap}
+.asleft{flex:1 1 800px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.asline{display:flex;gap:16px;align-items:flex-start}
+.asright{flex:1 1 260px;min-width:260px;display:flex;flex-direction:column;gap:10px}
+.asright .tb{flex:1 1 0;display:flex;flex-direction:column;gap:4px;min-height:96px}
+.asright label{font-size:11px;font-weight:800;color:var(--b-deep,#132339);letter-spacing:.3px}
+.asright textarea{flex:1 1 auto;width:100%;min-height:76px;padding:8px 10px;font-size:12px;line-height:1.65;border:1px solid var(--line,#e6e0d3);border-radius:6px;font-family:inherit;background:var(--panel,#fff);resize:vertical;color:var(--ink,#1b1b1a)}
+.asright textarea:focus{outline:none;border-color:var(--gold,#c9a227)}
+.asgrp{display:flex;flex-direction:column;gap:6px}
+.asgrp.micro{flex:none}
+.asgrp>h6{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--mut,#847b68);letter-spacing:.5px;margin:0}
+.asgrp>h6 b{color:var(--gold,#c9a227)}
+.asslots{display:flex;gap:10px}
+.ratio-sw{display:inline-flex;gap:0;border:1px solid var(--line,#e6e0d3);border-radius:6px;overflow:hidden}
+.ratio-sw button{border:0;background:var(--panel,#fff);color:var(--sub,#57544c);font-family:inherit;font-size:10.5px;font-weight:700;padding:3px 9px;cursor:pointer;line-height:1.5}
+.ratio-sw button+button{border-left:1px solid var(--line,#e6e0d3)}
+.ratio-sw button.on{background:var(--b-deep,#132339);color:#fff}
+.aslot{flex:0 0 auto;position:relative;width:168px;height:168px;border:1px dashed var(--line2,#d5cbb6);border-radius:6px;background:var(--panel,#fff);display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;transition:.15s}
+.aslot:hover{border-color:var(--gold,#c9a227)}
+.aslot img{width:100%;height:100%;object-fit:cover;display:block}
+.aslot .plus{font-size:26px;color:#c9c1ae;line-height:1}
+.aslot .cap{position:absolute;left:0;bottom:0;right:0;font-size:10.5px;text-align:center;color:#fff;background:rgba(19,35,57,.62);padding:1px 0}
+.aslot.main{width:240px;height:240px}
+.asslots.r43 .aslot{height:224px}
+.aslot .clr{position:absolute;right:4px;top:4px;width:21px;height:21px;border-radius:50%;background:rgba(19,35,57,.72);color:#fff;font-size:13px;line-height:21px;text-align:center;cursor:pointer;font-style:normal}
+.aslot .clr:hover{background:#a8452c}
+.asname{flex:0 0 auto;width:168px;padding:4px 7px;font-size:11px;border:1px solid var(--line,#e6e0d3);border-radius:4px;font-family:inherit;background:var(--panel,#fff)}
+.asname:focus{outline:none;border-color:var(--gold,#c9a227)}
+@media(max-width:1180px){.aslot{width:120px;height:120px}.asslots.r43 .aslot{height:160px}.aslot.main{width:160px;height:160px}.asname{width:120px}}
+.lkt.imgtab{background:#e2efe8;color:#2c6b4a;border-color:#cfdcd4}
+.lkt.imgtab em{font-style:normal;font-size:11.5px;font-weight:600;opacity:.85}
+.lkt.imgtab:hover{border-color:#2c6b4a;color:#1f5544}
+.lkt.imgtab.on{background:#2c6b4a;color:#fff;border-color:#2c6b4a;box-shadow:inset 0 3px 0 var(--gold,#c9a227)}
+.lkt.imgtab.on em{color:#dff0e5}
+
+/* ---- account gate (local demo) ---- */
+#acctGate{position:fixed;inset:0;z-index:9999;background:rgba(19,35,57,.72);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:24px}
+#acctGate.hidden{display:none}
+#acctGate .gate-box{background:#fff;border-radius:16px;padding:28px 30px;width:min(420px,92vw);box-shadow:0 12px 40px rgba(0,0,0,.25);border:1px solid var(--line)}
+#acctGate h2{font-size:18px;margin:0 0 6px;color:var(--b-deep)}
+#acctGate p{font-size:13px;color:var(--sub);margin:0 0 16px;line-height:1.6}
+#acctGate input{width:100%;padding:11px 12px;border:1px solid var(--line2);border-radius:8px;font-size:15px;margin-bottom:12px}
+#acctGate input:focus{outline:2px solid var(--gold-line);border-color:var(--gold)}
+#acctGate .gate-row{display:flex;gap:8px;align-items:center}
+#acctGate .gate-row .btn{flex:1}
+#acctChip{display:none;align-items:center;gap:8px;margin-left:auto;font-size:12.5px;color:var(--sub)}
+#acctChip.on{display:flex}
+#acctChip b{color:var(--b-deep);font-weight:700}
+#acctChip .btn{padding:5px 10px;font-size:12px}
+.app-locked .wrap,.app-locked .top .mods,.app-locked .top .skins{visibility:hidden}
+
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="top-in">
+    <div class="brand">◒ 爆款带新品 · 测图作战台</div>
+    <div class="mods">
+      <button class="mod on" data-pg="pg1"><b>一</b>爆款链接 · 营销裂变</button>
+      <button class="mod" data-pg="pg2"><b>二</b>海选上新</button>
+    </div>
+    <div class="skins">
+      <button class="sk on" data-skin="inkblue"><i style="background:linear-gradient(120deg,#132339,#2c527c)"></i>墨蓝金</button>
+      <button class="sk" data-skin="inkgreen"><i style="background:linear-gradient(120deg,#0e2a22,#1f5544)"></i>深墨绿金</button>
+      <button class="sk" data-skin="graphite"><i style="background:linear-gradient(120deg,#17171a,#3a3a40)"></i>石墨金</button>
+      <button class="sk" data-skin="warm"><i style="background:linear-gradient(120deg,#211d16,#5f4a20)"></i>暖金</button>
+    </div>
+  
+    <div id="acctChip">
+      <span>账号 <b id="acctLabel">—</b></span>
+      <button type="button" class="btn ghost" id="btnLogout">切换账号</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="page on" id="pg1">
+
+<div class="ph">
+  <span class="tag">爆款主体 · 测图 · 裂变链接</span>
+  <h1>爆款带新品 · 测图作战台</h1>
+  <p>用爆款当试验田，用创意图当"款式期货"；图测只出方向，不出结论；跑出来的款打样后才裂变独立链接。</p>
+  <div class="kv">
+    <div>计划组<b id="kvGroups">—</b></div>
+    <div>测试预算<b id="kvBudget">—</b></div>
+    <div>周期<b id="kvDays">—</b></div>
+    <div>创意位上限<b id="kvVers">—</b></div>
+  </div>
+</div>
+
+  <div class="m1-tabs" id="m1Tabs"></div>
+
+  <section id="s1" class="m1pane on">
+    <div class="sec-t"><div class="n">①</div><h2>思维底层（十条，先认这个）</h2></div>
+    <p class="hint">这十条是地基。哪一条不认，后面的流程都会走形。</p>
+    <div class="grid2">
+      <div class="ax"><b>1 · 爆款是主体，不是参照物</b><p>它出流量、出人群、出权重，是试验田＋供血者。</p></div>
+      <div class="ax"><b>2 · 图是款式期货</b><p>先测图、后做货。用最低成本验"有没有人想看"，别先押货。</p></div>
+      <div class="ax"><b>3 · 没实物，只能测"想不想看"</b><p>测不出"想不想买"。把点击意愿当购买意愿，是最常见的自欺。</p></div>
+      <div class="ax"><b>4 · 转化、成交、加购一律不作数</b><p>买的是旧款，归因不到新款。用这些数判新款，等于冤杀。</p></div>
+      <div class="ax"><b>5 · 咨询"有没有、什么时候上"是最强信号</b><p>客户主动开口问，才是真需求。客服必须逐条记原话。</p></div>
+      <div class="ax"><b>6 · 同链接、同词、同人，创意才可比</b><p>跨链接、跨词路比点击率，比的是位置和出价，不是创意。</p></div>
+      <div class="ax"><b>7 · 组多 ≠ 预算多</b><p>拉新是常备军、测试是侦察兵。组可以开三五组，但钱不能按组数均分——测试组吃小预算快跑，不是常设编制。</p></div>
+      <div class="ax"><b>8 · 图测只出方向，不出结论</b><p>它回答"哪版更吸引"，不回答"这款能不能卖"。</p></div>
+      <div class="ax"><b>9 · 打样绕不过，图测不能快过打样</b><p>测出来货没到，裂变链接就是空的；两边必须同步启动。</p></div>
+      <div class="ax"><b>10 · 阈值先定后测</b><p>跑之前写下来，跑完不许改。看结果改标准＝自欺。</p></div>
+    </div>
+  </section>
+
+  <section id="s2" class="m1pane">
+    <div class="sec-t"><div class="n">②</div><h2>流程框架</h2></div>
+    <p class="hint">五步一条线；中间那道「打样」绕不过去。</p>
+    <div class="card" style="padding:10px">
+      <svg viewBox="0 0 1080 250" width="100%" role="img" xmlns="http://www.w3.org/2000/svg" aria-label="测图到裂变的流程框架">
+        <defs>
+          <marker id="af" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+        <rect x="20" y="30" width="184" height="86" rx="10" fill="#ffffff" stroke="#d5cbb6" stroke-width="1"/>
+        <text x="112" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b1a">① 爆款主体</text>
+        <text x="112" y="80" text-anchor="middle" font-size="12" fill="#57544c">流量 · 人群 · 权重</text>
+        <text x="112" y="99" text-anchor="middle" font-size="11" fill="#847b68">多组计划：拉新 + 测试</text>
+
+        <rect x="228" y="30" width="184" height="86" rx="10" fill="#ffffff" stroke="#d5cbb6" stroke-width="1"/>
+        <text x="320" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#1b1b1a">② 图测预筛</text>
+        <text x="320" y="80" text-anchor="middle" font-size="12" fill="#57544c">智能词路 · 爆款人群</text>
+        <text x="320" y="99" text-anchor="middle" font-size="11" fill="#847b68">3–4 版创意 · 只跑点击</text>
+
+        <rect x="436" y="30" width="184" height="86" rx="10" fill="#fff8e1" stroke="#e6cf8a" stroke-width="1"/>
+        <text x="528" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#8a6200">③ 信号闸</text>
+        <text x="528" y="80" text-anchor="middle" font-size="12" fill="#9a6b00">点击↑ · 咨询↑ · 停留正常</text>
+        <text x="528" y="99" text-anchor="middle" font-size="11" fill="#a8811f">样本够才判</text>
+
+        <rect x="644" y="30" width="184" height="86" rx="10" fill="#fff8e1" stroke="#e6cf8a" stroke-width="1"/>
+        <text x="736" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#8a6200">④ 打样 · 裂变</text>
+        <text x="736" y="80" text-anchor="middle" font-size="12" fill="#9a6b00">有实物才建链</text>
+        <text x="736" y="99" text-anchor="middle" font-size="11" fill="#a8811f">新图 · 新标题 · 独立链接</text>
+
+        <rect x="852" y="30" width="208" height="86" rx="10" fill="#e7f0e9" stroke="#bcd6c2" stroke-width="1"/>
+        <text x="956" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#2f6b45">⑤ 实物验证</text>
+        <text x="956" y="80" text-anchor="middle" font-size="12" fill="#34774e">获客稳定 → 按周期验转化</text>
+        <text x="956" y="99" text-anchor="middle" font-size="11" fill="#3f8f5b">过 → 矩阵角色 · 小步放量</text>
+
+        <path d="M204 73 L224 73" fill="none" stroke="#8a8272" stroke-width="1.6" marker-end="url(#af)"/>
+        <path d="M412 73 L432 73" fill="none" stroke="#8a8272" stroke-width="1.6" marker-end="url(#af)"/>
+        <path d="M620 73 L640 73" fill="none" stroke="#b98a2e" stroke-width="1.6" marker-end="url(#af)"/>
+        <path d="M828 73 L848 73" fill="none" stroke="#3f8f5b" stroke-width="1.6" marker-end="url(#af)"/>
+
+        <path d="M956 116 L956 146 L112 146 L112 120" fill="none" stroke="#3f8f5b" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#af)"/>
+        <text x="534" y="168" text-anchor="middle" font-size="12" fill="#3f8f5b">循环：爆款继续当主体，下一批创意接着测（上位款逐步接替主体）</text>
+
+        <rect x="20" y="190" width="1040" height="42" rx="9" fill="#fbeae3" stroke="#e7b9a8" stroke-width="1" stroke-dasharray="5 4"/>
+        <text x="540" y="211" text-anchor="middle" font-size="12.5" font-weight="700" fill="#c0492f">红线：②只出方向不出结论　③没实物前任何转化与成交都不算这款成绩　④不做实物就是空链接</text>
+      </svg>
+    </div>
+  </section>
+
+  
+
+  
+
+  <section id="s5" class="m1pane">
+    <div class="sec-t"><div class="n">③</div><h2>推广创意框架（一版只改一个变量）</h2></div>
+    <p class="hint">创意不是"多画几张"，而是有意识地改某一个要素，看数据怎么动。</p>
+
+    <div class="card">
+      <div class="grid3" style="gap:12px">
+        <div class="ax" style="border-left-color:var(--b-deep)"><b>要素 1 · 款式主体</b><p>让人第一眼看到的是哪个款：形状 / 纹理 / 结构。<b>改它＝改款</b></p></div>
+        <div class="ax" style="border-left-color:var(--b-deep)"><b>要素 2 · 核心卖点</b><p>一句最打动人的话：防滑 / 加厚 / 免洗。<b>改它＝改利益点</b></p></div>
+        <div class="ax" style="border-left-color:var(--b-deep)"><b>要素 3 · 使用场景</b><p>在哪用：入户门 / 浴室 / 阳台 / 车尾。<b>改它＝改人群</b></p></div>
+        <div class="ax" style="border-left-color:var(--b-deep)"><b>要素 4 · 价格带表达</b><p>有没有露出价格锚，观感是 9.9 还是 59。<b>改它＝改客群预期</b></p></div>
+        <div class="ax" style="border-left-color:var(--b-deep)"><b>要素 5 · 视觉风格</b><p>色调与构图：写实 / 白底 / 生活感 / 对比图。<b>改它＝改第一眼</b></p></div>
+        <div class="ax" style="border-left-color:var(--gold);background:var(--gold-soft)"><b>铁律 · 单变量</b><p>一次只改一个要素。改两个以上，数据好看但你<b>学不到东西</b>——你永远不知道是哪个起的作用。</p></div>
+      </div>
+      <div class="note b" style="margin-top:14px"><span class="ic">ℹ</span><span><b>尺寸规范：</b>创意图统一 <b>1:1 方图</b>（平台常用 800×800）。主体与文案留在中间安全区，四边留白——不同展示位会裁边，贴边的字会被切掉。</span></div>
+    </div>
+
+    </section>
+
+  <section id="s3" class="m1pane">
+    <div class="sec-t"><div class="n">④</div><h2>计划框架（组数自己定，可增删改）</h2></div>
+    <p class="hint">拉新组是常备军，测试组是侦察兵。测试组是租来的位置，不是编制——行数按你实际的计划组增减，内容直接改。</p>
+    <div class="tblwrap"><div class="scrollx"><table class="plan">
+      <thead><tr><th style="width:19%">组（可改名）</th><th style="width:19%">任务</th><th style="width:30%">配置</th><th>纪律</th><th style="width:7%;text-align:center">操作</th></tr></thead>
+      <tbody id="planBody"></tbody>
+    </table></div></div>
+    <div class="btnrow"><button class="btn ghost" id="addPlan">＋ 增加一组</button>
+      <span style="font-size:12px;color:var(--mut);align-self:center">表里改的就是下面「创意组」页签的那一份数据，改完页签同步</span></div>
+    <div class="note b"><span class="ic">ℹ</span><span><b>拉新组不要换创意。</b>拉新组保持爆款原创意不动，测试组才能拿它当趋势参照；两组都换，你连"这批图到底行不行"都判断不了。</span></div>
+  </section>
+
+  <section id="s6" class="m1pane">
+    <div class="sec-t"><div class="n">⑤</div><h2>创意上传（图即款式）</h2></div>
+    <p class="hint">每版一个卡片，写清"这版改了什么"——要能被客户一句话描述出来。</p>
+    <div class="gtabs" id="gtabs1"></div>
+    <div class="drop" id="drop">
+      <b>批量拖入</b>
+      <span>一次多选或拖入多张，自动填进空位（1:1 方图 · 800×800）　·　单张请直接点下面 A/B/C/D 的方框</span>
+      <input type="file" id="fileInput" accept="image/*" multiple hidden>
+    </div>
+    <div class="cgrid" id="cGrid"></div>
+    <input type="file" id="slotFile" accept="image/*" hidden>
+    <div class="btnrow"><button class="btn ghost" id="addSlot">＋ 增加一个创意位</button>
+      <span style="font-size:12px;color:var(--mut);align-self:center">加在当前组里；删掉的位不会自己长回来</span></div>
+  </section>
+
+  <section id="s7" class="m1pane">
+    <div class="sec-t"><div class="n">⑥</div><h2>数据记录（按日 · 按创意）</h2></div>
+    <p class="hint">一天一行；点击率与 CPC 自动算。前 N 天为学习期，判定时不参与。</p>
+    <div class="card">
+      <div class="rowform">
+        <div class="fld"><label>日期</label><input type="date" id="fDate"></div>
+        <div class="fld"><label>创意版本</label><select id="fCreative"></select></div>
+        <div class="fld"><label>展现</label><input type="number" id="fImpr" min="0" placeholder="0"></div>
+        <div class="fld"><label>点击</label><input type="number" id="fClicks" min="0" placeholder="0"></div>
+        <div class="fld"><label>花费(元)</label><input type="number" id="fCost" min="0" step="0.01" placeholder="0"></div>
+        <div class="fld"><label>平均位置</label><input type="number" id="fPos" min="0" step="0.1" placeholder="—"></div>
+        <div class="fld"><label>咨询数</label><input type="number" id="fCons" min="0" placeholder="0"></div>
+        <div class="fld"><label>加购数</label><input type="number" id="fCart" min="0" placeholder="0"></div>
+        <div class="fld"><label>成交订单</label><input type="number" id="fOrders" min="0" placeholder="0"></div>
+        <div class="fld" style="grid-column:span 2"><label>咨询原话 / 备注</label><input type="text" id="fNote" placeholder="如：3 人问「方格纹有没有」"></div>
+      </div>
+      <div class="btnrow">
+        <button class="btn" id="addRow">记一条</button>
+        <button class="btn ghost" id="fillDemo" title="第一次点：按最近的数据日期补齐往前 7 天的窗口；之后每点一次，从最早的日期再往前倒推 7 天，可无限次点击，历史越点越长">模拟 7 天数据</button>
+      </div>
+    </div>
+    <div class="gtabs" id="gtabs2"></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="pane" id="pane"></div>
+    <div class="sum" id="sum"></div>
+    <div class="verdict" id="verdict"><b>结论</b><p>还没有数据。传上图、记几天，这里会自动出结论。</p></div>
+  </section>
+
+  
+
+  <section id="s8" class="m1pane">
+    <div class="sec-t"><div class="n">⑧</div><h2>测试款 · 所有在测创意一览</h2></div>
+    <p class="hint">一眼看完<b>目前有多少张图在测</b>、每张图跑到什么程度。一行 3 张，按计划组顺序排；数据是该创意位的<b>全部累计</b>（不剔学习期）。</p>
+    <div class="tstat" id="tStat"></div>
+    <div class="tgrid" id="tGrid"></div>
+  </section>
+
+  <section id="s4" class="m1pane">
+    <div class="sec-t"><div class="n">⑦</div><h2>测图标准 + 综合数据（先填标准，再看达成）</h2></div>
+    <p class="hint">这些数字直接参与判定。填完点「锁定标准」。</p>
+    <div class="card">
+      <div style="font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:8px">样本门槛（判得动的最低量 · 不够就记「待验证」，不判失败）</div>
+      <div class="stdf" id="stdForm">
+        <div class="fld"><label>单日预算</label><input type="number" id="stBudget" min="1"><div class="u">元 / 天（仅算总预算）</div></div>
+        <div class="fld"><label>测试周期</label><input type="number" id="stDays" min="1"><div class="u">天（仅算总预算）</div></div>
+        <div class="fld"><label>学习期（不计入）</label><input type="number" id="stLearn" min="0"><div class="u">前 N 天（剔除判定）</div></div>
+        <div class="fld"><label>创意版数上限</label><input type="number" id="stMaxVer" min="1"><div class="u">版（每组补位）</div></div>
+        <div class="fld"><label>每版最小点击</label><input type="number" id="stMinClicks" min="1"><div class="u">次</div></div>
+        <div class="fld"><label>每版最小展现</label><input type="number" id="stMinImpr" min="1"><div class="u">次</div></div>
+        <div class="fld"><label>胜出门槛（相对均值）</label><input type="number" id="stUplift" min="0"><div class="u">高出 %</div></div>
+        <div class="fld"><label>出价方式</label><select id="stBid"><option>控成本</option><option>手动出价</option><option>最大化拿量（不推荐）</option></select><div class="u">建议前两项 · 仅记录</div></div>
+      </div>
+      <div style="margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)">
+        <div style="font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:8px">指标达标线（判好坏 · 与下方看板一一对应，这里填一次，下面只读联动）</div>
+        <div class="stdf" id="thrForm">
+          <div class="fld"><label>展现量 ≥</label><input type="number" id="btImpr" step="1" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>点击量 ≥</label><input type="number" id="btClicks" step="1" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>点击率 ≥</label><input type="number" id="btCtr" step="0.01" placeholder="不设"><div class="u">%（填 4 = 4%）</div></div>
+          <div class="fld"><label>花费 ≤</label><input type="number" id="btCost" step="0.01" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>CPC ≤</label><input type="number" id="btCpc" step="0.01" placeholder="不设"><div class="u">加权 CPC</div></div>
+          <div class="fld"><label>咨询 ≥</label><input type="number" id="btCons" step="1" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>加购量 ≥</label><input type="number" id="btCart" step="1" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>加购率 ≥</label><input type="number" id="btCartRate" step="0.01" placeholder="不设"><div class="u">%（填 8 = 8%）</div></div>
+          <div class="fld"><label>订单 ≥</label><input type="number" id="btOrders" step="1" placeholder="不设"><div class="u">总和（区间累计）</div></div>
+          <div class="fld"><label>转化率 ≥</label><input type="number" id="btCvr" step="0.01" placeholder="不设"><div class="u">%（填 5 = 5%）</div></div>
+        </div>
+      </div>
+      <div class="btnrow">
+        <button class="btn" id="saveStd">锁定标准</button>
+        <span class="stdline" id="stdTotal"></span>
+      </div>
+      <div class="note w" style="margin-top:14px"><span class="ic">⚠</span><span><b>判定规则（自动执行）：</b>①每版点击 ≥ 最小点击、展现 ≥ 最小展现才算"样本达标"；②只在达标的版里比点击率；③某版点击率 ≥ 达标版均值 ×（1+门槛%）判"胜出"；④样本不足一律记"待验证"，不记失败；⑤<b>前 N 天学习期已自动从 KPI / 图表 / 判定中剔除</b>（表格保留并标「学习期」）。</span></div>
+    </div>
+      <div class="card" style="margin-top:14px">
+      <div class="chd" style="margin-bottom:10px">
+        <h5 style="font-size:var(--fs-sub);font-weight:700;color:var(--ink);margin:0">综合数据 · 指标达成看板</h5>
+        <div class="ctype" id="bRange">
+          <button data-r="7" class="on">7 天</button><button data-r="15">15 天</button>
+          <button data-r="30">30 天</button><button data-r="custom">自定义</button>
+        </div>
+      </div>
+      <div class="bcust" id="bCust">
+        <input type="date" id="bFrom"><span style="color:var(--mut)">→</span><input type="date" id="bTo">
+        <span style="font-size:12px;color:var(--mut)">选起止日期，留空 = 不限</span>
+      </div>
+      <div style="font-size:12px;color:var(--mut);margin-bottom:8px" id="bInfo"></div>
+      <div class="tblwrap"><div class="scrollx"><table class="board" id="boardTable"></table></div></div>
+      <div class="note b" style="margin-top:10px"><span class="ic">ℹ</span><span>展现量 / 点击量 / 花费 / 咨询 / 加购量 / 成交量 取<b>总和</b>（统计区间内累计，与 ⑧ 测试款卡片口径一致）；点击率 / CPC / 加购率 / 转化率取<b>加权</b>（总量相除，不是日均再平均）。<b>达标线在 ⑦ 测图标准里填，这里只读、自动联动；留空或 0 ＝ 该指标不参与达成统计</b>；每个创意超线的指标数量记在「达成数」。学习期数据已剔除。</span></div>
+    </div>
+</section>
+
+  </div><!-- /pg1 -->
+
+<div class="page" id="pg2">
+
+<div class="ph">
+  <span class="tag">模块二 · 第一批海选链接</span>
+  <h1>从测图方向 · 到可跑链接</h1>
+  <p>测图只证明"有人想点"。这一页把方向变成一批独立链接：一条链接押一个款式，错峰上架，用每条链接自己上架后的前几天见死活。</p>
+  <div class="kv">
+    <div>海选链接<b id="kvLinks">—</b></div>
+    <div>可上架<b id="kvReady">—</b></div>
+    <div>已上架<b id="kvLive">—</b></div>
+    <div>已晋级<b id="kvUp">—</b></div>
+  </div>
+</div>
+  
+
+  <section id="s9">
+    <div class="sec-t"><div class="n">二</div><h2>链接窗口 · 定位 / 主图 / 汇总 / 逐条记录</h2></div>
+    <p class="hint">四个页签一整套：<b>测试链接定位</b>（定这批链接押什么）→ <b>链接主图</b>（全批主图一格一卡，先看图）→ <b>汇总</b>（全批横向比高低）→ <b>各条链接</b>（逐日录、逐日看）。一天一行；带「自动」的率值不用填，系统自己算。</p>
+    <div class="lk-status" id="lkStatus">正在读取…</div>
+
+    <div class="lk-sheets">
+      <div class="lk-tabsbar">
+        <div class="lktabs" id="lkTabs"></div>
+        <div class="lk-step">
+          <button data-lkstep="-1" title="上一条链接">◀</button>
+          <span id="lkPos">0 / 0</span>
+          <button data-lkstep="1" title="下一条链接">▶</button>
+        </div>
+      </div>
+      <div id="lkPane"></div>
+      <input type="file" id="lkAssetFile" accept="image/*" hidden>
+    </div>
+
+  </section>
+
+</div><!-- /pg2 -->
+
+<section id="bak">
+    <div class="sec-t"><div class="n">⚙</div><h2>备份与导出（两个模块共用）</h2></div>
+    <p class="hint">数据只存本机浏览器。换电脑、清缓存会丢——用下面的按钮留一份。备份里同时含<b>模块一的创意与测图数据</b>和<b>模块二的海选链接与链接数据</b>。</p>
+    <div class="card">
+      <div class="btnrow" style="margin-top:0">
+        <button class="btn" id="expJson">导出备份（JSON）</button>
+        <button class="btn ghost" id="expCsv">导出数据（CSV）</button>
+        <button class="btn ghost" id="impBtn">导入备份</button>
+        <input type="file" id="impFile" accept="application/json" hidden>
+        <button class="btn danger" id="clearAll">清空全部</button>
+      </div>
+      <div class="note b" style="margin-top:14px"><span class="ic">ℹ</span><span><b>口径提醒：</b>转化率、成交、加购<b>不参与</b>判定——链接卖的是旧款，这些数归因不到新款。本台只认：点击率（同链接同词同人）＋ 咨询原话 ＋ 进店停留。</span></div>
+    </div>
+  </section>
+
+  <div class="foot">爆款带新品 · 测图作战台 v2　|　双模块：① 爆款链接·营销裂变 ② 海选上新　|　本地演示 · 账号隔离持久化 · 非公网部署　|　风格：深结构色 + 金重点　|　2026-10-20</div>
+</div>
+
+
+<div id="acctGate">
+  <div class="gate-box">
+    <h2>本地演示 · 账号进入</h2>
+    <p>输入任意账号 ID（无需密码）。每个账号的数据在服务端按目录隔离保存，仅本机演示，非产品化部署。</p>
+    <input id="acctInput" type="text" maxlength="64" placeholder="例如：demo_a 或 店铺A" autocomplete="username">
+    <div class="gate-row">
+      <button type="button" class="btn" id="btnLogin">进入作战台</button>
+    </div>
+    <p style="margin-top:12px;margin-bottom:0;font-size:12px;color:var(--mut)">上次使用会记在本机 localStorage，方便连点。清空/切换不影响其他账号。</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+var KEY='tagtest_v1';
+var ACCT_KEY='tagtest_last_account';
+var accountId=null;
+var _saveTimer=null;
+var _booted=false;
+function defaults(){
+  return { std:{budget:100,days:7,learn:2,maxVer:4,minClicks:100,minImpr:1000,uplift:20,bid:'控成本'}, creatives:[], rows:[], checks:{}, tab:0, metric:'ctr', chartType:'line', groups:[], activeGroup:'', board:{range:'7',from:'',to:'',thr:{}},
+           links:[], linkRows:[], lkWin:7, lkThr:{ctr:4,cartRate:8,favRate:0,cvr:2,aov:0,minImpr:1000,minClicks:100}, lkMetric:'impr', lkType:'line', lkActive:'__loc__', m1Tab:'s1', pg:'pg1' };
+}
+function mergeState(o){
+  var d=defaults();
+  if(!o || typeof o!=='object') return d;
+  return { std: Object.assign(d.std, o.std||{}), creatives:o.creatives||[], rows:o.rows||[], checks:o.checks||{}, tab:(typeof o.tab==='number'? o.tab:0), metric:o.metric||'ctr', chartType:o.chartType||'line', groups:o.groups||[], activeGroup:o.activeGroup||'', board:o.board||{range:'7',from:'',to:'',thr:{}}, links:o.links||[], linkRows:o.linkRows||[], lkWin:(typeof o.lkWin==='number'?o.lkWin:7), lkThr:Object.assign({ctr:4,cartRate:8,favRate:0,cvr:2,aov:0,minImpr:1000,minClicks:100}, o.lkThr||{}), lkMetric:o.lkMetric||'impr', lkType:o.lkType||'line', lkActive:o.lkActive||'__loc__', m1Tab:o.m1Tab||'s1', pg:o.pg||'pg1' };
+}
+var state = defaults();
+
+function cacheLocal(){
+  if(!accountId) return;
+  try{ localStorage.setItem(KEY+':'+accountId, JSON.stringify(state)); }
+  catch(e){ /* quota — ignore offline cache */ }
+}
+function save(){
+  cacheLocal();
+  if(!accountId) return;
+  clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(function(){ putStateNow(); }, 400);
+}
+function putStateNow(){
+  if(!accountId) return Promise.resolve();
+  return fetch('/api/state', {
+    method:'PUT',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ accountId: accountId, state: state })
+  }).then(function(r){ return r.json(); }).then(function(j){
+    if(!j || !j.ok) throw new Error((j&&j.error)||'保存失败');
+  }).catch(function(e){
+    toast('同步失败：'+(e.message||'网络/服务端错误')+'（本机缓存已写）');
+  });
+}
+function apiLogin(id){
+  return fetch('/api/login', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ accountId: id })
+  }).then(function(r){ return r.json(); });
+}
+function apiGetState(id){
+  return fetch('/api/state?accountId='+encodeURIComponent(id)).then(function(r){ return r.json(); });
+}
+function applyAccountUI(){
+  var chip=document.getElementById('acctChip');
+  var label=document.getElementById('acctLabel');
+  var gate=document.getElementById('acctGate');
+  if(accountId){
+    label.textContent=accountId;
+    chip.classList.add('on');
+    gate.classList.add('hidden');
+    document.body.classList.remove('app-locked');
+  }else{
+    chip.classList.remove('on');
+    gate.classList.remove('hidden');
+    document.body.classList.add('app-locked');
+  }
+}
+function bootApp(){
+  if(!_booted){
+    bindGroupTabs('gtabs1'); bindGroupTabs('gtabs2');
+    bindThrInputs();
+    _booted=true;
+  }
+  ensureGroups();
+  renderAll();
+  renderM1Tabs();
+  goPage(state.pg||DEF_PAGE);
+  if($('fDate')) $('fDate').value=todayYmd();
+}
+function enterAccount(id){
+  id=String(id||'').trim();
+  if(!id){ toast('请输入账号 ID'); return; }
+  apiLogin(id).then(function(j){
+    if(!j || !j.ok) throw new Error((j&&j.error)||'登录失败');
+    accountId=j.accountId;
+    try{ localStorage.setItem(ACCT_KEY, accountId); }catch(e){}
+    return apiGetState(accountId);
+  }).then(function(j){
+    if(!j || !j.ok) throw new Error((j&&j.error)||'拉取状态失败');
+    if(j.empty || !j.state){
+      try{
+        var raw=localStorage.getItem(KEY+':'+accountId);
+        state = raw ? mergeState(JSON.parse(raw)) : defaults();
+      }catch(e){ state=defaults(); }
+    }else{
+      state=mergeState(j.state);
+    }
+    applyAccountUI();
+    bootApp();
+    toast('已进入账号：'+accountId);
+  }).catch(function(e){
+    toast('进入失败：'+(e.message||e));
+  });
+}
+function logoutAccount(){
+  clearTimeout(_saveTimer);
+  var finish=function(){
+    accountId=null;
+    state=defaults();
+    applyAccountUI();
+    var inp=document.getElementById('acctInput');
+    try{ var last=localStorage.getItem(ACCT_KEY); if(last && inp) inp.value=last; }catch(e){}
+    toast('已退出，可切换账号');
+  };
+  if(accountId){
+    putStateNow().then(finish, finish);
+  }else finish();
+}
+function toast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('on');
+  clearTimeout(t._h); t._h=setTimeout(function(){ t.classList.remove('on'); },2200);
+}
+function $(id){ return document.getElementById(id); }
+function num(v){ var n=parseFloat(v); return isFinite(n)?n:0; }
+function pct(v){ return (v==null || !isFinite(v))? '—' : (v*100).toFixed(2)+'%'; }
+function money(v){ return (v==null || !isFinite(v))? '—' : v.toFixed(2); }
+/* 本地日期，绝不用 toISOString（UTC 会把 GMT+8 的零点算成前一天） */
+function ymd(dt){ return dt.getFullYear()+'-'+('0'+(dt.getMonth()+1)).slice(-2)+'-'+('0'+dt.getDate()).slice(-2); }
+function todayYmd(){ return ymd(new Date()); }
+
+document.querySelectorAll('.sk').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.documentElement.setAttribute('data-skin', b.getAttribute('data-skin'));
+    document.querySelectorAll('.sk').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on');
+  });
+});
+
+/* ---------- 创意检查清单 ---------- */
+var CHECK_ITEMS=[
+  ['one','这版只改了一个要素（改两个以上无法归因）'],
+  ['name','能被客户用一句话描述出来'],
+  ['same','与实际商品同品类、可解释，不做跨品类假图'],
+  ['law','无「最 / 第一 / 永久」等绝对化用语'],
+  ['text','文字占比符合平台规则'],
+  ['clear','商品本体清晰，没被场景淹没'],
+  ['ratio','尺寸是 1:1 方图，主体与文案在安全区内'],
+  ['diff','与其他几版有明显差异，不是换个滤镜'],
+  ['hypo','已写清这版要验证什么（一句话假设）']
+];
+function renderChecks(){
+  var box=$('chkList'); if(!box) return;
+  box.innerHTML='';
+  CHECK_ITEMS.forEach(function(it){
+    var lab=document.createElement('label'); lab.className='chk';
+    var cb=document.createElement('input'); cb.type='checkbox';
+    cb.setAttribute('data-ck', it[0]);
+    cb.checked = !!(state.checks && state.checks[it[0]]);
+    var sp=document.createElement('span'); sp.textContent=it[1];
+    lab.appendChild(cb); lab.appendChild(sp); box.appendChild(lab);
+  });
+}
+var chkBox=$('chkList');
+if(chkBox){
+  chkBox.addEventListener('change', function(e){
+    var t=e.target;
+    if(t && t.dataset && t.dataset.ck!==undefined){
+      state.checks = state.checks || {};
+      state.checks[t.dataset.ck] = !!t.checked;
+      save();
+    }
+  });
+}
+
+/* ---------- 标准 ---------- */
+var THRMAP=[['btImpr','impr'],['btClicks','clicks'],['btCtr','ctr'],['btCost','cost'],
+             ['btCpc','cpc'],['btCons','cons'],['btCart','cart'],['btCartRate','cartRate'],
+             ['btOrders','orders'],['btCvr','cvr']];
+function bindThrInputs(){
+  THRMAP.forEach(function(pr){
+    var el=$(pr[0]); if(!el) return;
+    el.addEventListener('change', function(){
+      if(!state.board) state.board={range:'7',from:'',to:'',thr:{}};
+      state.board.thr=state.board.thr||{};
+      state.board.thr[pr[1]]=parseFloat(el.value)||0;
+      save(); renderBoard();
+    });
+  });
+}
+function renderStd(){
+  var s=state.std;
+  $('stBudget').value=s.budget; $('stDays').value=s.days; $('stLearn').value=s.learn;
+  $('stMaxVer').value=s.maxVer; $('stMinClicks').value=s.minClicks; $('stMinImpr').value=s.minImpr;
+  $('stUplift').value=s.uplift; $('stBid').value=s.bid;
+  var thr=(state.board&&state.board.thr)||{};
+  THRMAP.forEach(function(pr){ var el=$(pr[0]); if(el){ el.value = (thr[pr[1]]>0? thr[pr[1]] : ''); } });
+  $('stdTotal').textContent='本轮总预算 ≈ ' + (s.budget*s.days) + ' 元（' + s.budget + ' × ' + s.days + ' 天）';
+}
+function readStd(){
+  state.std={
+    budget:num($('stBudget').value), days:num($('stDays').value), learn:num($('stLearn').value),
+    maxVer:num($('stMaxVer').value), minClicks:num($('stMinClicks').value),
+    minImpr:num($('stMinImpr').value), uplift:num($('stUplift').value), bid:$('stBid').value
+  };
+}
+$('saveStd').addEventListener('click', function(){ readStd(); save(); renderStd(); renderAll(); toast('标准已锁定'); });
+
+/* ---------- 创意 ---------- */
+function nextName(){
+  var used={};
+  state.creatives.forEach(function(c){ if(c.name) used[c.name]=1; });
+  for(var i=0;i<26;i++){ var n=String.fromCharCode(65+i); if(!used[n]) return n; }
+  return 'X';
+}
+function nextNameIn(gid){
+  var used={};
+  state.creatives.forEach(function(c){ if(c.gid===gid && c.name) used[c.name]=1; });
+  for(var i=0;i<26;i++){ var n=String.fromCharCode(65+i); if(!used[n]) return n; }
+  return 'X';
+}
+function ensureSlotsFor(gid, n){
+  var list=state.creatives.filter(function(c){ return c.gid===gid; });
+  for(var i=list.length;i<n;i++){
+    state.creatives.push({ id:'c'+Date.now()+'_'+gid+'_'+i, gid:gid, name:nextNameIn(gid), img:'', w:0, h:0, variant:'', note:'' });
+  }
+}
+function ensureGroups(){
+  var firstInit=false;
+  if(!state.groups || !state.groups.length){
+    firstInit=true;
+    state.groups=[
+      {id:'g1',name:'组1 · 拉新', task:'拉新 · 爆款自己获客', config:'核心词 / 关键词，手动或控成本', rule:'常备，稳定跑量，作趋势参考'},
+      {id:'g2',name:'组2 · 拉新', task:'拉新 · 爆款自己获客', config:'长尾词包 / 人群包，与组 1 错词错人', rule:'与组 1 错开，避免自己跟自己竞价'},
+      {id:'g3',name:'组3 · 测试', task:'新品创意测试', config:'智能词路 · 锁定爆款人群 · 100 元/天 · 7 天', rule:'独立预算独立记账；测完撤或转，不长期占位'}
+    ];
+  }
+  var DEF=[
+    ['组1 · 拉新','拉新 · 爆款自己获客','核心词 / 关键词，手动或控成本','常备，稳定跑量，作趋势参考'],
+    ['组2 · 拉新','拉新 · 爆款自己获客','长尾词包 / 人群包，与组 1 错词错人','与组 1 错开，避免自己跟自己竞价'],
+    ['组3 · 测试','新品创意测试','智能词路 · 锁定爆款人群 · 100 元/天 · 7 天','独立预算独立记账；测完撤或转，不长期占位']
+  ];
+  state.groups.forEach(function(g,i){
+    if(g.task==null)   g.task   = (DEF[i]? DEF[i][1] : '');
+    if(g.config==null) g.config = (DEF[i]? DEF[i][2] : '');
+    if(g.rule==null)   g.rule   = (DEF[i]? DEF[i][3] : '');
+  });
+  var g0=state.groups[0].id;
+  state.creatives.forEach(function(c){ if(!c.gid) c.gid=g0; });
+  var ok=false;
+  state.groups.forEach(function(g){ if(g.id===state.activeGroup) ok=true; });
+  if(!ok) state.activeGroup=g0;
+  if(firstInit){ state.groups.forEach(function(g){ ensureSlotsFor(g.id, state.std.maxVer||4); }); }
+}
+function groupOf(gid){
+  for(var i=0;i<state.groups.length;i++){ if(state.groups[i].id===gid) return state.groups[i]; }
+  return state.groups[0]||{id:'',name:'未分组'};
+}
+function activeList(){
+  return state.creatives.filter(function(c){ return c.gid===state.activeGroup; });
+}
+function renderGroupTabs(boxId){
+  var box=$(boxId); if(!box) return;
+  box.innerHTML='';
+  state.groups.forEach(function(g){
+    var b=document.createElement('button');
+    b.className='gt'+(g.id===state.activeGroup?' on':'');
+    b.setAttribute('data-gid', g.id);
+    b.title=(g.id===state.activeGroup? '再点一次可改名' : '切换到「'+g.name+'」');
+    b.textContent=g.name;
+    box.appendChild(b);
+  });
+  var add=document.createElement('button');
+  add.className='gt add'; add.setAttribute('data-addgroup','1'); add.textContent='＋ 新建组';
+  box.appendChild(add);
+}
+function esc(v){
+  return String(v==null?'':v).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+}
+function renderPlan(){
+  var tb=$('planBody'); if(!tb) return;
+  tb.innerHTML='';
+  state.groups.forEach(function(g,i){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td><input data-gi="'+i+'" data-gf="name" value="'+esc(g.name)+'" placeholder="组名"></td>'+
+      '<td><input data-gi="'+i+'" data-gf="task" value="'+esc(g.task)+'" placeholder="任务（如：新品创意测试）"></td>'+
+      '<td><input data-gi="'+i+'" data-gf="config" value="'+esc(g.config)+'" placeholder="配置（词路 / 人群 / 预算 / 周期）"></td>'+
+      '<td><input data-gi="'+i+'" data-gf="rule" value="'+esc(g.rule)+'" placeholder="纪律（如：独立预算、测完撤）"></td>'+
+      '<td style="text-align:center"><button class="del" data-gdel="'+i+'" style="padding:2px 8px;width:auto">删</button></td>';
+    tb.appendChild(tr);
+  });
+}
+function updateHero(){
+  var g=$('kvGroups'); if(g) g.textContent=((state.groups&&state.groups.length)||0)+' 组';
+  var b=$('kvBudget'); if(b) b.textContent=(state.std.budget||0)+' 元/天';
+  var d=$('kvDays'); if(d) d.textContent=(state.std.days||0)+' 天';
+  var v=$('kvVers'); if(v) v.textContent='≤ '+(state.std.maxVer||0)+' 版';
+}
+function renderCreatives(){
+  renderGroupTabs('gtabs1'); renderGroupTabs('gtabs2');
+  updateHero();
+  var g=$('cGrid'); g.innerHTML='';
+  /* 自愈：历史数据里有 gid 丢失的创意（旧上传 bug 造成），归回第一组救回来 */
+  var healed=0;
+  state.creatives.forEach(function(c){
+    if(!c.gid){
+      var g0=(state.groups[0] && state.groups[0].id) || state.activeGroup;
+      if(g0){ c.gid=g0; healed++; }
+    }
+  });
+  if(healed) save();
+  var al=activeList();
+  if(!al.length){
+    g.innerHTML='<div class="empty" style="grid-column:1/-1">这一组还没有创意位——点下方「＋ 增加一个创意位」建一个。</div>';
+  }
+  al.forEach(function(c){
+    var idx=state.creatives.indexOf(c);
+    var d=document.createElement('div'); d.className='cc';
+    var has=!!c.img;
+    var badRatio=(c.w && c.h)? (Math.abs(c.w/c.h-1)>0.05):false;
+    var dim=(c.w && c.h)? (badRatio? (c.w+'×'+c.h):'1:1'):'';
+    var dimHtml=dim? '<span class="dim'+(badRatio?' bad':'')+'">'+dim+'</span>':'';
+    var thumb=has? '<img src="'+c.img+'" alt="">'+dimHtml
+                  : '<div class="slot"><span class="plus">+</span><span class="tip">点击上传<br>1:1 方图</span></div>';
+    d.innerHTML='<div class="thumb'+(has?'':' empty')+'" data-up="'+idx+'" title="'+(has?'点击替换这张图':'点击上传这张图')+'">'+thumb+'</div>'+
+      '<div class="body"><span class="ver">'+c.name+'</span>'+
+      '<input data-i="'+idx+'" data-k="variant" value="'+(c.variant||'').replace(/"/g,'&quot;')+'" placeholder="这版改了什么（如：方格纹）">'+
+      '<input data-i="'+idx+'" data-k="note" value="'+(c.note||'').replace(/"/g,'&quot;')+'" placeholder="备注 / 创意编号">'+
+      '<div class="acts"><button class="up" data-up="'+idx+'">'+(has?'替换':'上传')+'</button>'+
+      '<button class="del" data-rm="'+idx+'">删除</button></div></div>';
+    g.appendChild(d);
+  });
+  var sel=$('fCreative'); sel.innerHTML='';
+  activeList().forEach(function(c){
+    var o=document.createElement('option'); o.value=c.id;
+    o.textContent=c.name+' · '+(c.variant||'未命名');
+    sel.appendChild(o);
+  });
+}
+function bindGroupTabs(id){
+  var box=$(id); if(!box) return;
+  box.addEventListener('click', function(e){
+    var a=e.target.closest('[data-addgroup]');
+    if(a){
+      var n=state.groups.length+1;
+      var g={id:'g'+Date.now(), name:'组'+n+' · 自定义'};
+      state.groups.push(g); ensureSlotsFor(g.id, state.std.maxVer||4);
+      state.activeGroup=g.id; state.tab=0;
+      save(); renderPlan(); renderCreatives(); renderTable(); renderSummary();
+      toast('已新建「'+g.name+'」，可在计划框架表里改名与补配置');
+      return;
+    }
+    var b=e.target.closest('[data-gid]');
+    if(!b) return;
+    var gid=b.getAttribute('data-gid');
+    if(gid===state.activeGroup){
+      var cur=groupOf(gid);
+      var nn=prompt('改组名（如「组3 · 测试」）：', cur.name);
+      if(nn && nn.trim()){ cur.name=nn.trim(); save(); renderPlan(); renderCreatives(); renderTable(); renderSummary(); }
+      return;
+    }
+    state.activeGroup=gid; state.tab=0;
+    save(); renderCreatives(); renderTable(); renderSummary();
+  });
+}
+document.getElementById('cGrid').addEventListener('input', function(e){
+  var t=e.target;
+  if(t.dataset && t.dataset.k!==undefined){
+    var i=+t.dataset.i, k=t.dataset.k;
+    if(state.creatives[i]){ state.creatives[i][k]=t.value; save(); renderSummary(); }
+  }
+});
+var slotTarget=-1, slotInput=document.getElementById('slotFile');
+document.getElementById('cGrid').addEventListener('click', function(e){
+  var up=e.target.closest('[data-up]');
+  if(up){ slotTarget=+up.getAttribute('data-up'); slotInput.value=''; slotInput.click(); return; }
+  var rm=e.target.closest('[data-rm]');
+  if(rm){
+    var i=+rm.getAttribute('data-rm');
+    var c=state.creatives[i]; if(!c) return;
+    if(!confirm('删除 '+c.name+' 这一位？图片、文字与该位已记的数据会一并删除。')) return;
+    state.rows = state.rows.filter(function(r){ return r.cid !== c.id; });
+    state.creatives.splice(i,1);
+    save(); renderCreatives(); renderTable(); renderSummary(); toast('已删除 '+c.name);
+  }
+});
+$('addSlot').addEventListener('click', function(){
+  state.creatives.push({ id:'c'+Date.now(), gid:state.activeGroup, name:nextNameIn(state.activeGroup), img:'', w:0, h:0, variant:'', note:'' });
+  save(); renderCreatives(); renderTable(); renderSummary();
+  toast('已增加一个创意位');
+});
+slotInput.addEventListener('change', function(){
+  var f=this.files[0]; if(!f || slotTarget<0) return;
+  var idx=slotTarget; slotTarget=-1; this.value='';
+  fillSlot(idx, f);
+});
+async function fillSlot(i, file){
+  var c=state.creatives[i]; if(!c) return;
+  var cid=c.id, cname=c.name, gid=c.gid;
+  var r=await readImage(file);
+  if(!r || !r.url){ toast('读图失败，换一张试试'); return; }
+  /* 按 id 重新定位：读图是异步的，期间可能被删或被重排 */
+  var t=null;
+  for(var k=0;k<state.creatives.length;k++){ if(state.creatives[k].id===cid){ t=state.creatives[k]; break; } }
+  if(!t){ toast(cname+' 这一位已经被删了，图没存上'); return; }
+  /* 只改图片相关字段，gid/name/variant 一个都不能动 */
+  t.img=r.url; t.w=r.w; t.h=r.h;
+  if(!t.note) t.note=file.name;
+  if(!t.gid) t.gid=(gid || state.activeGroup);
+  save(); renderCreatives(); renderSummary();
+  if(!r.square && r.w && r.h) toast(t.name+' 位已更新，但这张不是 1:1（'+r.w+'×'+r.h+'）');
+  else toast(t.name+' 位已更新');
+}
+
+function readImage(file, maxPx){
+  return new Promise(function(resolve){
+    var fr=new FileReader();
+    fr.onload=function(){
+      var img=new Image();
+      img.onload=function(){
+        var w0=img.width, h0=img.height;
+        var square = (w0>0 && h0>0) ? (Math.abs(w0/h0 - 1) <= 0.05) : false;
+        try{
+          var max=maxPx||800, w=img.width, h=img.height, s=Math.min(1, max/Math.max(w,h));
+          w=Math.round(w*s); h=Math.round(h*s);
+          var cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+          cv.getContext('2d').drawImage(img,0,0,w,h);
+          resolve({ url: cv.toDataURL('image/jpeg',0.72), w:w0, h:h0, square:square });
+        }catch(err){ resolve({ url: fr.result, w:w0, h:h0, square:square }); }
+      };
+      img.onerror=function(){ resolve({ url: fr.result, w:0, h:0, square:false }); };
+      img.src=fr.result;
+    };
+    fr.onerror=function(){ resolve(null); };
+    fr.readAsDataURL(file);
+  });
+}
+async function addFiles(files){
+  var list=Array.prototype.slice.call(files||[]);
+  if(!list.length) return;
+  var badRatio=[], filled=0, addedNew=0;
+  for(var i=0;i<list.length;i++){
+    var f=list[i]; if(!f.type || f.type.indexOf('image/')!==0) continue;
+    var r=await readImage(f);
+    if(!r || !r.url) continue;
+    if(!r.square && r.w && r.h) badRatio.push(r.w+'×'+r.h);
+    var grp=activeList(), target=null;
+    for(var k=0;k<grp.length;k++){ if(!grp[k].img){ target=grp[k]; break; } }
+    if(target){
+      target.img=r.url; target.w=r.w; target.h=r.h;
+      if(!target.note) target.note=f.name;
+      filled++;
+    }else{
+      state.creatives.push({ id:'c'+Date.now()+'_'+i, gid:state.activeGroup, name:nextNameIn(state.activeGroup), img:r.url, w:r.w, h:r.h, variant:'', note:f.name });
+      addedNew++;
+    }
+  }
+  save(); renderCreatives(); renderSummary();
+  var over = activeList().filter(function(c){ return !!c.img; }).length - state.std.maxVer;
+  if(badRatio.length) toast('有 '+badRatio.length+' 张不是 1:1（'+badRatio.join('、')+'），建议裁成方图');
+  else if(over>0) toast('本组已超出设定版数上限（'+state.std.maxVer+' 版），建议删减');
+  else toast('已填入 '+(filled+addedNew)+' 张（本组空位优先）');
+}
+var drop=$('drop'), fi=$('fileInput');
+drop.addEventListener('click', function(){ fi.click(); });
+fi.addEventListener('change', function(){ addFiles(fi.files); fi.value=''; });
+['dragenter','dragover'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.add('on'); }); });
+['dragleave','drop'].forEach(function(ev){ drop.addEventListener(ev, function(e){ e.preventDefault(); drop.classList.remove('on'); }); });
+drop.addEventListener('drop', function(e){ if(e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+
+/* ---------- 数据 ---------- */
+function addRow(){
+  var list=activeList();
+  if(!list.length){ toast('先上传创意，再记数据'); return; }
+  var cid=$('fCreative').value || list[0].id;
+  var okc=false;
+  for(var i=0;i<list.length;i++){ if(list[i].id===cid) okc=true; }
+  if(!okc) cid=list[0].id;
+  state.rows.push({
+    id:'r'+Date.now(),
+    date:$('fDate').value || todayYmd(),
+    cid:cid,
+    impr:num($('fImpr').value), clicks:num($('fClicks').value), cost:num($('fCost').value),
+    pos:num($('fPos').value), cons:num($('fCons').value), cart:num($('fCart').value), orders:num($('fOrders').value), note:$('fNote').value||''
+  });
+  save(); renderTable(); renderSummary();
+  ['fImpr','fClicks','fCost','fPos','fCons','fCart','fOrders','fNote'].forEach(function(id){ $(id).value=''; });
+  toast('已记录到「'+groupOf(state.activeGroup).name+'」');
+}
+$('addRow').addEventListener('click', addRow);
+$('fillDemo').addEventListener('click', function(){
+  ensureSlotsFor(state.activeGroup, 4);
+  var list=activeList();
+  var demoNames=['方格纹','纯色','带边条'];
+  for(var q=0;q<demoNames.length && q<list.length;q++){
+    list[q].variant=demoNames[q];
+    list[q].note=list[q].note||'示例';
+    if(!list[q].w){ list[q].w=800; list[q].h=800; }
+  }
+  var ids=list.map(function(c){ return c.id; });   /* 当前组全部创意位都模拟（老版只填前 3 个，看别的位会以为没数据） */
+  /* 模拟规则（可无限次点击，一次往前扩 7 天）：
+     ① 没有数据 → 锚点＝今天，补最近 7 天（今天-6..今天）；
+     ② 有数据且「最近日期往前 7 天」的窗口里有缺口 → 第一次点先补齐这个窗口（锚最近日期倒推）；
+     ③ 窗口已补齐 → 之后每次点都从「最早的日期」再往前倒推 7 天（最早-7..最早-1），历史越点越长。 */
+  var todayStr=todayYmd(), added=0, firstD='', lastD='';
+  for(var k=0;k<ids.length;k++){
+    var cid=ids[k];
+    var minD=null, maxD=null;
+    state.rows.forEach(function(r){
+      if(r.cid!==cid || !r.date) return;
+      if(minD===null || r.date<minD) minD=r.date;
+      if(maxD===null || r.date>maxD) maxD=r.date;
+    });
+    var days=[];
+    if(minD===null){
+      for(var d=0; d<7; d++) days.push(addDays(todayStr, d-6));
+    }else{
+      var hole=false;
+      for(var d2=0; d2<7; d2++){
+        var wd=addDays(maxD, d2-6);
+        if(wd>todayStr) continue;
+        var has=false;
+        state.rows.forEach(function(r){ if(r.cid===cid && r.date===wd) has=true; });
+        if(!has){ hole=true; break; }
+      }
+      if(hole){
+        for(var d3=0; d3<7; d3++) days.push(addDays(maxD, d3-6));   /* 第一次：补齐最近 7 天窗口 */
+      }else{
+        for(var d4=0; d4<7; d4++) days.push(addDays(minD, -(d4+1))); /* 之后：从最早日期往前倒推 7 天 */
+      }
+    }
+    for(var j=0;j<days.length;j++){
+      var date=days[j];
+      if(date>todayStr) continue;
+      var dup=false;
+      state.rows.forEach(function(r){ if(r.cid===cid && r.date===date) dup=true; });
+      if(dup) continue;
+      state.rows.push({
+        id:'x'+j+'_'+k+'_'+Math.random().toString(36).slice(2,6), date:date, cid:cid,
+        impr: 600+Math.round(Math.random()*300),
+        clicks: k===0? 30+Math.round(Math.random()*10) : (k===1? 22+Math.round(Math.random()*8) : 12+Math.round(Math.random()*6)),
+        cost: k===0? 45 : (k===1? 32 : 18), pos: 3+Math.random()*3,
+        cons: k===0? 1+Math.round(Math.random()*2) : 1,                        /* 咨询每天都有 */
+        cart: k===0? 2+Math.round(Math.random()*3) : (k===1? 1+Math.round(Math.random()*2) : 1),  /* 加购每天都有 */
+        orders: k===0? 1+Math.round(Math.random()) : 1,                        /* 成交每天都有 */
+        note: k===0? '3 人问「方格纹有没有」' : ''
+      });
+      added++;
+      if(!firstD || date<firstD) firstD=date;
+      if(date>lastD) lastD=date;
+    }
+  }
+  save(); renderCreatives(); renderTable(); renderSummary(); renderBoard(); renderTestList();
+  toast(added? ('已模拟 '+added+' 天示例（'+firstD+' ～ '+lastD+'，从最早日期往前倒推）') : '没有可补的日期（这段都已有数据）');
+});
+function rowCtr(r){ return r.impr>0 ? r.clicks/r.impr : null; }
+function rowCpc(r){ return r.clicks>0 ? r.cost/r.clicks : null; }
+function learnDates(cid){
+  var seen={}, arr=[];
+  state.rows.forEach(function(r){ if(r.cid===cid && !seen[r.date]){ seen[r.date]=1; arr.push(r.date); } });
+  arr.sort();
+  var n=state.std.learn||0, set={};
+  if(n>0){ arr.slice(0,n).forEach(function(d){ set[d]=1; }); }
+  return set;
+}
+function seriesOf(cid){
+  var skip=learnDates(cid);
+  var map={};
+  state.rows.forEach(function(r){
+    if(r.cid!==cid) return;
+    if(skip[r.date]) return;
+    if(!map[r.date]) map[r.date]={date:r.date, impr:0, clicks:0, cost:0, cons:0, cart:0, orders:0};
+    map[r.date].impr+=r.impr; map[r.date].clicks+=r.clicks;
+    map[r.date].cost+=r.cost; map[r.date].cons+=r.cons;
+    map[r.date].cart+=(r.cart||0); map[r.date].orders+=(r.orders||0);
+  });
+  return Object.keys(map).sort().map(function(d){ return map[d]; });
+}
+var METRICS=[
+  {k:'impr',  n:'展现',     u:'num',   f:function(s){ return s.impr; }},
+  {k:'clicks',n:'点击',     u:'num',   f:function(s){ return s.clicks; }},
+  {k:'ctr',   n:'点击率',   u:'pct',   f:function(s){ return s.impr? s.clicks/s.impr : 0; }},
+  {k:'cost',  n:'花费',     u:'money', f:function(s){ return s.cost; }},
+  {k:'cpc',   n:'CPC',      u:'money', f:function(s){ return s.clicks? s.cost/s.clicks : 0; }},
+  {k:'cons',  n:'咨询',     u:'num',   f:function(s){ return s.cons; }},
+  {k:'cart',  n:'加购',     u:'num',   f:function(s){ return s.cart||0; }},
+  {k:'cartRate', n:'加购率', u:'pct',  f:function(s){ return s.clicks? (s.cart||0)/s.clicks : 0; }},
+  {k:'orders',n:'成交订单', u:'num',   f:function(s){ return s.orders||0; }},
+  {k:'cvr',   n:'转化率',   u:'pct',   f:function(s){ return s.clicks? (s.orders||0)/s.clicks : 0; }}
+];
+function metricOf(k){
+  for(var i=0;i<METRICS.length;i++){ if(METRICS[i].k===k) return METRICS[i]; }
+  return METRICS[2];
+}
+function fmtTick(v,u){
+  if(u==='pct') return (v*100).toFixed(1)+'%';
+  if(u==='money') return v.toFixed(0);
+  return String(Math.round(v));
+}
+function axisLayer(W,H,pl,pr,pt,pb,top,u){
+  var iw=W-pl-pr, ih=H-pt-pb, g='', l='';
+  for(var i=0;i<=2;i++){
+    var y=pt+ih*i/2;
+    g+='<line x1="'+pl+'" y1="'+y.toFixed(1)+'" x2="'+(W-pr)+'" y2="'+y.toFixed(1)+'" stroke="#e6e0d3" stroke-width="1"/>';
+    l+='<text x="'+(pl-7)+'" y="'+(y+4).toFixed(1)+'" text-anchor="end" font-size="10" fill="#847b68">'+fmtTick(top*(1-i/2),u)+'</text>';
+  }
+  return {grid:g, labels:l, iw:iw, ih:ih};
+}
+function chartSVG(series, metric, type, M, emptyTxt){
+  var m=metricOf(metric);
+  if(M){ m=null; for(var q=0;q<M.length;q++){ if(M[q].k===metric){ m=M[q]; break; } } if(!m) m=M[0]; }
+  if(!series.length) return '<div class="emptychart">'+(emptyTxt||'这一位还没有数据')+'</div>';
+  var W=980,H=250,pl=56,pr=20,pt=18,pb=32;
+  var vals=series.map(function(s){ return m.f(s); });
+  var mx=0; vals.forEach(function(v){ if(v>mx) mx=v; });
+  if(!(mx>0)) mx=1;
+  var top=mx*1.2;
+  var a=axisLayer(W,H,pl,pr,pt,pb,top,m.u);
+  var n=vals.length, out='', xl='';
+  if(type==='bar'){
+    var bw=Math.max(10, Math.min(46, a.iw/n*0.55));
+    series.forEach(function(s,i){
+      var cx=pl+(i+0.5)*a.iw/n;
+      var h=(vals[i]/top)*a.ih;
+      out+='<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+(pt+a.ih-h).toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(1,h).toFixed(1)+'" rx="3" fill="#3a6ea5"/>';
+      out+='<text x="'+cx.toFixed(1)+'" y="'+(pt+a.ih-h-5).toFixed(1)+'" text-anchor="middle" font-size="10" fill="#57544c">'+fmtTick(vals[i],m.u)+'</text>';
+      xl+='<text x="'+cx.toFixed(1)+'" y="'+(H-9)+'" text-anchor="middle" font-size="10" fill="#847b68">'+s.date.slice(5)+'</text>';
+    });
+  }else{
+    var px=function(i){ return pl+(n===1? a.iw/2 : i*a.iw/(n-1)); };
+    var py=function(v){ return pt+a.ih-(v/top)*a.ih; };
+    var d=vals.map(function(v,i){ return (i?'L':'M')+px(i).toFixed(1)+' '+py(v).toFixed(1); }).join(' ');
+    var dots=vals.map(function(v,i){ return '<circle cx="'+px(i).toFixed(1)+'" cy="'+py(v).toFixed(1)+'" r="3.2" fill="#c8963e"/>'; }).join('');
+    var vl=vals.map(function(v,i){ return '<text x="'+px(i).toFixed(1)+'" y="'+(py(v)-8).toFixed(1)+'" text-anchor="middle" font-size="10" fill="#8a6a1e">'+fmtTick(v,m.u)+'</text>'; }).join('');
+    out='<path d="'+d+'" fill="none" stroke="#c8963e" stroke-width="2" stroke-linejoin="round"/>'+dots+vl;
+    xl=series.map(function(s,i){ return '<text x="'+px(i).toFixed(1)+'" y="'+(H-9)+'" text-anchor="middle" font-size="10" fill="#847b68">'+s.date.slice(5)+'</text>'; }).join('');
+  }
+  return '<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img">'+a.grid+a.labels+out+xl+'</svg>';
+}
+function rowCvr(r){ return r.clicks? (r.orders||0)/r.clicks : null; }
+function renderTable(){
+  if(state.tab==null) state.tab=0;
+  if(!state.chartType) state.chartType='line';
+  if(!state.metric) state.metric='ctr';
+  var list=activeList();
+  if(state.tab>=list.length) state.tab=0;
+  var tabs=$('tabs'); tabs.innerHTML='';
+  list.forEach(function(c,i){
+    var b=document.createElement('button');
+    b.className='tab'+(i===state.tab?' on':'');
+    b.setAttribute('data-tab', i);
+    b.textContent=c.name+(c.variant? ' · '+c.variant : '');
+    tabs.appendChild(b);
+  });
+  var pane=$('pane');
+  var c=list[state.tab];
+  if(!c){ pane.innerHTML='<div class="empty">这一组还没有创意位</div>'; return; }
+  var rowsAll=state.rows.filter(function(r){ return r.cid===c.id; });
+  var skip=learnDates(c.id);
+  var rows=rowsAll.filter(function(r){ return !skip[r.date]; });
+  var excluded=rowsAll.length-rows.length;
+  var agg={impr:0,clicks:0,cost:0,cons:0,cart:0,orders:0};
+  rows.forEach(function(r){
+    agg.impr+=r.impr; agg.clicks+=r.clicks; agg.cost+=r.cost;
+    agg.cons+=r.cons; agg.cart+=(r.cart||0); agg.orders+=(r.orders||0);
+  });
+  var ctr=agg.impr? agg.clicks/agg.impr : null;
+  var cpc=agg.clicks? agg.cost/agg.clicks : null;
+  var cvr=agg.clicks? agg.orders/agg.clicks : null;
+  var series=seriesOf(c.id);
+
+  var kpi='<div class="pmeta">'+
+    '<div class="pm"><b>展现</b><span>'+agg.impr+'</span></div>'+
+    '<div class="pm"><b>点击</b><span>'+agg.clicks+'</span></div>'+
+    '<div class="pm"><b>点击率</b><span>'+pct(ctr)+'</span></div>'+
+    '<div class="pm"><b>花费</b><span>'+money(agg.cost)+'</span></div>'+
+    '<div class="pm"><b>CPC</b><span>'+money(cpc)+'</span></div>'+
+    '<div class="pm"><b>咨询</b><span>'+agg.cons+'</span></div>'+
+    '<div class="pm"><b>加购</b><span>'+agg.cart+'</span></div>'+
+    '<div class="pm"><b>加购率</b><span>'+pct(agg.clicks? agg.cart/agg.clicks : null)+'</span></div>'+
+    '<div class="pm"><b>成交订单</b><span>'+agg.orders+'</span></div>'+
+    '<div class="pm"><b>转化率</b><span>'+pct(cvr)+'</span></div>'+
+    '</div>';
+
+  var chips='<div class="mchips">';
+  METRICS.forEach(function(m){
+    chips+='<button class="mc'+(m.k===state.metric?' on':'')+'" data-metric="'+m.k+'">'+m.n+'</button>';
+  });
+  chips+='</div>';
+
+  var mnow=metricOf(state.metric);
+  var chart='<div class="chartbox">'+
+    '<div class="chd"><h5>'+mnow.n+' · 按日走势　<span style="font-weight:400;color:#847b68;font-size:11px">'+groupOf(c.gid).name+(excluded>0?'　·　已剔除前 '+(state.std.learn||0)+' 天学习期':'')+'</span></h5>'+
+    '<div class="ctype"><button data-type="line" class="'+(state.chartType==='line'?'on':'')+'">折线</button>'+
+    '<button data-type="bar" class="'+(state.chartType==='bar'?'on':'')+'">柱状</button></div></div>'+
+    chartSVG(series, state.metric, state.chartType)+
+    '</div>';
+
+  var body='';
+  if(!rowsAll.length){
+    body='<tr><td colspan="13" style="text-align:center;color:#847b68;padding:16px">这一位还没有数据，用上面的表单记一条。</td></tr>';
+  }else{
+    rowsAll.slice().sort(function(a,b){ return (a.date<b.date)?-1:(a.date>b.date?1:0); }).forEach(function(r){
+      var isL=!!skip[r.date];
+      body+='<tr'+(isL?' style="opacity:.62"':'')+'><td class="num">'+r.date+(isL?' <span class="tag a" style="font-size:10px;padding:0 5px">学习期</span>':'')+'</td>'+
+        '<td class="num">'+r.impr+'</td>'+
+        '<td class="num">'+r.clicks+'</td>'+
+        '<td class="num">'+pct(rowCtr(r))+'</td>'+
+        '<td class="num">'+money(r.cost)+'</td>'+
+        '<td class="num">'+money(rowCpc(r))+'</td>'+
+        '<td class="num">'+(r.pos? r.pos.toFixed(1):'—')+'</td>'+
+        '<td class="num">'+r.cons+'</td>'+
+        '<td class="num">'+(r.cart||0)+'</td>'+
+        '<td class="num">'+(r.orders||0)+'</td>'+
+        '<td class="num">'+pct(rowCvr(r))+'</td>'+
+        '<td style="font-size:12px;color:#57544c;white-space:normal">'+(r.note||'')+'</td>'+
+        '<td><button class="del" data-rid="'+r.id+'" style="padding:2px 8px;width:auto">删</button></td></tr>';
+    });
+  }
+  var table='<div class="tblwrap"><div class="scrollx"><table class="dt">'+
+    '<thead><tr><th>日期</th><th>展现</th><th>点击</th><th>点击率</th><th>花费</th><th>CPC</th><th>位置</th><th>咨询</th><th>加购</th><th>成交订单</th><th>转化率</th><th>备注</th><th></th></tr></thead>'+
+    '<tbody>'+body+'</tbody></table></div></div>';
+
+  var warn = (rowsAll.length && !rows.length)
+    ? '<div class="note w" style="margin-bottom:10px"><span class="ic">⚠</span><span>这一位目前只有「学习期」数据（前 '+(state.std.learn||0)+' 天），判定要等学习期结束；下面的 KPI 与图表暂为空。</span></div>'
+    : '';
+  pane.innerHTML = warn + kpi + chips + chart + table;
+  renderBoard();
+}
+$('planBody').addEventListener('input', function(e){
+  var t=e.target;
+  if(!t.dataset || t.dataset.gf===undefined) return;
+  var i=+t.dataset.gi, f=t.dataset.gf;
+  if(!state.groups[i]) return;
+  state.groups[i][f]=t.value;
+  save();
+  if(f==='name'){ renderGroupTabs('gtabs1'); renderGroupTabs('gtabs2'); }
+});
+$('planBody').addEventListener('change', function(e){
+  var t=e.target;
+  if(!t.dataset || t.dataset.gf===undefined) return;
+  var i=+t.dataset.gi;
+  if(!state.groups[i]) return;
+  if(t.dataset.gf==='name' && !state.groups[i].name.trim()){
+    state.groups[i].name='组'+(i+1); t.value=state.groups[i].name; save();
+  }
+  renderCreatives(); renderTable(); renderSummary();
+});
+$('planBody').addEventListener('click', function(e){
+  var b=e.target.closest('[data-gdel]'); if(!b) return;
+  var i=+b.getAttribute('data-gdel');
+  var g=state.groups[i]; if(!g) return;
+  if(state.groups.length<=1){ toast('至少要留一组'); return; }
+  var ids=state.creatives.filter(function(c){ return c.gid===g.id; }).map(function(c){ return c.id; });
+  if(!confirm('删除「'+g.name+'」？该组 '+ids.length+' 个创意位及其数据会一并删除。')) return;
+  state.groups.splice(i,1);
+  state.creatives=state.creatives.filter(function(c){ return c.gid!==g.id; });
+  state.rows=state.rows.filter(function(r){ return ids.indexOf(r.cid)<0; });
+  if(state.activeGroup===g.id){ state.activeGroup=state.groups[0].id; state.tab=0; }
+  save(); renderPlan(); renderCreatives(); renderTable(); renderSummary();
+  toast('已删除「'+g.name+'」');
+});
+$('addPlan').addEventListener('click', function(){
+  var n=state.groups.length+1;
+  var g={id:'g'+Date.now(), name:'组'+n+' · 自定义', task:'', config:'', rule:''};
+  state.groups.push(g); ensureSlotsFor(g.id, state.std.maxVer||4);
+  state.activeGroup=g.id; state.tab=0;
+  save(); renderPlan(); renderCreatives(); renderTable(); renderSummary();
+  toast('已增加「'+g.name+'」');
+});
+$('tabs').addEventListener('click', function(e){
+  var b=e.target.closest('[data-tab]'); if(!b) return;
+  state.tab=+b.getAttribute('data-tab'); save(); renderTable();
+});
+$('pane').addEventListener('click', function(e){
+  var mc=e.target.closest('[data-metric]');
+  if(mc){ state.metric=mc.getAttribute('data-metric'); save(); renderTable(); return; }
+  var ty=e.target.closest('[data-type]');
+  if(ty){ state.chartType=ty.getAttribute('data-type'); save(); renderTable(); return; }
+  var b=e.target.closest('[data-rid]');
+  if(b){
+    var id=b.getAttribute('data-rid');
+    state.rows=state.rows.filter(function(r){ return r.id!==id; });
+    save(); renderTable(); renderSummary();
+  }
+});
+
+function boardWindow(){
+  var b=state.board||{};
+  var ds=[], seen={};
+  state.rows.forEach(function(r){ if(!seen[r.date]){ seen[r.date]=1; ds.push(r.date); } });
+  ds.sort();
+  if(b.range==='custom'){ return {from:b.from||'', to:b.to||''}; }
+  var days=parseInt(b.range,10)||7;
+  if(!ds.length) return {from:'',to:''};
+  var to=ds[ds.length-1];
+  var d=new Date(to+'T00:00:00'); d.setDate(d.getDate()-(days-1));
+  return {from:ymd(d), to:to};
+}
+function boardAgg(cid, win){
+  var skip=learnDates(cid), dates={};
+  var a={impr:0,clicks:0,cost:0,cons:0,cart:0,orders:0};
+  state.rows.forEach(function(r){
+    if(r.cid!==cid) return;
+    if(skip[r.date]) return;
+    if(win.from && r.date<win.from) return;
+    if(win.to && r.date>win.to) return;
+    dates[r.date]=1;
+    a.impr+=r.impr; a.clicks+=r.clicks; a.cost+=r.cost;
+    a.cons+=r.cons; a.cart+=(+r.cart||0); a.orders+=(r.orders||0);
+  });
+  a.days=Object.keys(dates).length;
+  a.ctr=a.impr? a.clicks/a.impr : 0;
+  a.cpc=a.clicks? a.cost/a.clicks : 0;
+  a.cartRate=a.clicks? a.cart/a.clicks : 0;
+  a.cvr=a.clicks? a.orders/a.clicks : 0;
+  return a;
+}
+function fmtB(v,u){
+  if(u==='pct') return (v*100).toFixed(2)+'%';
+  if(u==='money') return v.toFixed(2);
+  return String(Math.round(v));
+}
+/* 与 ⑧ 测试款卡片的 10 项指标一一对应；量值=总和（区间内累计），率值=加权（总量相除） */
+var BCOLS=[
+  ['impr','展现量','int','总和','up',     function(a){ return a.impr; }],
+  ['clicks','点击量','int','总和','up',   function(a){ return a.clicks; }],
+  ['ctr','点击率','pct','加权','up',      function(a){ return a.impr? a.clicks/a.impr:0; }],
+  ['cost','花费','money','总和','down',   function(a){ return a.cost; }],
+  ['cpc','CPC','money','加权','down',     function(a){ return a.clicks? a.cost/a.clicks:0; }],
+  ['cons','咨询人数','int','总和','up',   function(a){ return a.cons; }],
+  ['cart','加购量','int','总和','up',     function(a){ return a.cart; }],
+  ['cartRate','加购率','pct','加权','up', function(a){ return a.clicks? a.cart/a.clicks:0; }],
+  ['orders','成交量','int','总和','up',   function(a){ return a.orders; }],
+  ['cvr','转化率','pct','加权','up',      function(a){ return a.clicks? a.orders/a.clicks:0; }]
+];
+function renderBoard(){
+  var tb=$('boardTable'); if(!tb) return;
+  var rng=(state.board&&state.board.range)||'7';
+  var rb=$('bRange');
+  if(rb){ Array.prototype.forEach.call(rb.querySelectorAll('button'), function(b){ b.classList.toggle('on', b.getAttribute('data-r')===rng); }); }
+  var bc=$('bCust'); if(bc){ bc.style.display = (rng==='custom')?'flex':'none'; }
+  var win=boardWindow();
+  var inf=$('bInfo');
+  if(inf){ inf.textContent = (win.from&&win.to) ? ('统计区间：'+win.from+' → '+win.to+'（学习期已剔除）') : '还没有数据，先在上面记几天。'; }
+  var thr=(state.board&&state.board.thr)||{};
+  var rows=[];
+  state.creatives.forEach(function(c){
+    var a=boardAgg(c.id, win);
+    if(!a.days) return;
+    rows.push({c:c, a:a});
+  });
+  if(inf && win.from && win.to && state.creatives.length>rows.length){
+    inf.textContent += '　·　'+(state.creatives.length-rows.length)+' 个创意位本期无数据，未列入';
+  }
+  var maxs={};
+  BCOLS.forEach(function(col){
+    var m=0; rows.forEach(function(r){ var v=col[5](r.a); if(v>m) m=v; }); maxs[col[0]]=m||1;
+  });
+  var h1='<tr><th>创意</th>';
+  BCOLS.forEach(function(col){ h1+='<th style="text-align:right">'+col[1]+'<small>'+col[3]+' · '+(col[4]==='down'?'≤':'≥')+'</small></th>'; });
+  h1+='<th style="text-align:center">达成数</th></tr>';
+  var h2='<tr class="thr"><td style="color:#c9c1ae;font-size:11px;padding-left:12px">达标线<span style="font-weight:400"> · 取自⑦</span></td>';
+  BCOLS.forEach(function(col){
+    var tv=parseFloat(thr[col[0]]);
+    var txt=(isFinite(tv)&&tv>0)? (col[2]==='pct'? tv+'%' : String(tv)) : '—';
+    h2+='<td style="text-align:right;font-size:11px;color:'+((isFinite(tv)&&tv>0)?'#e8d089':'#847b68')+'">'+txt+'</td>';
+  });
+  h2+='<td></td></tr>';
+  var body='';
+  if(!rows.length){
+    body='<tr><td colspan="'+(BCOLS.length+2)+'" style="text-align:center;color:#847b68;padding:18px">还没有可统计的数据</td></tr>';
+  }else{
+    rows.forEach(function(r){
+      var nm=groupOf(r.c.gid).name.replace(/\s+/g,'')+' / '+r.c.name+(r.c.variant? ' · '+r.c.variant : '');
+      var tds='<td style="white-space:nowrap">'+nm+'</td>';
+      var hit=0;
+      BCOLS.forEach(function(col){
+        var v=col[5](r.a);
+        var t=parseFloat(thr[col[0]]);
+        var cmp=(col[2]==='pct')? v*100 : v;
+        var ok=(isFinite(t) && t>0) && (col[4]==='down' ? cmp<=t : cmp>=t);
+        if(ok) hit++;
+        var w=maxs[col[0]]? Math.min(100, v/maxs[col[0]]*100) : 0;
+        tds+='<td class="bc'+(ok?' hit':'')+'"><span class="bar" style="width:'+w.toFixed(1)+'%"></span><span class="v">'+fmtB(v,col[2])+'</span></td>';
+      });
+      tds+='<td style="text-align:center"><span class="cntpill'+(hit?'':' zero')+'">'+hit+'</span></td>';
+      body+='<tr>'+tds+'</tr>';
+    });
+  }
+  tb.innerHTML='<thead>'+h1+h2+'</thead><tbody>'+body+'</tbody>';
+}
+$('bRange').addEventListener('click', function(e){
+  var b=e.target.closest('[data-r]'); if(!b) return;
+  if(!state.board) state.board={range:'7',from:'',to:'',thr:{}};
+  state.board.range=b.getAttribute('data-r');
+  save(); renderBoard();
+});
+['bFrom','bTo'].forEach(function(id){
+  $(id).addEventListener('change', function(){
+    if(!state.board) state.board={range:'7',from:'',to:'',thr:{}};
+    state.board.from=$('bFrom').value; state.board.to=$('bTo').value;
+    save(); renderBoard();
+  });
+});
+function renderSummary(){
+  var wrap=$('sum'); wrap.innerHTML='';
+  var s=state.std;
+  var list=activeList();
+  var stat=list.map(function(c){ return {name:c.name, variant:c.variant||'未命名', hasImg:!!c.img, impr:0, clicks:0, cost:0, cons:0}; });
+  var byId={}, skipMap={};
+  list.forEach(function(c,i){ byId[c.id]=i; skipMap[c.id]=learnDates(c.id); });
+  state.rows.forEach(function(r){
+    var i=byId[r.cid]; if(i===undefined) return;
+    if(skipMap[r.cid] && skipMap[r.cid][r.date]) return;
+    stat[i].impr+=r.impr; stat[i].clicks+=r.clicks; stat[i].cost+=r.cost; stat[i].cons+=r.cons;
+  });
+  stat.forEach(function(x){
+    x.ctr = x.impr>0? x.clicks/x.impr : null;
+    x.cpc = x.clicks>0? x.cost/x.clicks : null;
+    x.ok = (x.clicks>=s.minClicks && x.impr>=s.minImpr);
+  });
+  var okList=stat.filter(function(x){ return x.ok && x.ctr!==null; });
+  var avg = okList.length? okList.reduce(function(a,b){ return a+b.ctr; },0)/okList.length : null;
+
+  var shown = stat.filter(function(x){ return x.hasImg || x.impr>0 || x.clicks>0 || x.cons>0; });
+  if(!shown.length){
+    wrap.innerHTML='<div class="sbox" style="grid-column:1/-1"><b>还没有可统计的版本</b><div class="sm">先上传创意、再记几天数据，这里会出每版汇总</div></div>';
+  }else{
+    shown.forEach(function(x){
+      var d=document.createElement('div'); d.className='sbox';
+      d.innerHTML='<b>'+x.name+' · '+x.variant+'</b><div class="big">'+pct(x.ctr)+'</div>'+
+        '<div class="sm">点击 '+x.clicks+' / 展现 '+x.impr+'　CPC '+money(x.cpc)+'　咨询 '+x.cons+'</div>'+
+        '<div class="sm">'+ (x.ok? '<span class="tag g">样本达标</span>' : '<span class="tag a">样本不足</span>') +'</div>';
+      wrap.appendChild(d);
+    });
+    var idle = stat.length - shown.length;
+    if(idle>0){
+      var dz=document.createElement('div'); dz.className='sbox';
+      dz.innerHTML='<b>未使用的位</b><div class="big">'+idle+'</div><div class="sm">共 '+stat.length+' 位，还有 '+idle+' 位没图也没数据</div>';
+      wrap.appendChild(dz);
+    }
+  }
+
+  var v=$('verdict');
+  if(!okList.length){
+    v.innerHTML='<b>【'+groupOf(state.activeGroup).name+'】结论：待验证</b><p>还没有任何一版达到样本门槛（每版 ≥'+s.minClicks+' 点击、≥'+s.minImpr+' 展现）。<br>样本不足就下结论，是这类测试最常见的自欺。</p>';
+    return;
+  }
+  var best=okList.slice().sort(function(a,b){ return b.ctr-a.ctr; })[0];
+  var need = avg * (1 + s.uplift/100);
+  if(best.ctr>=need){
+    v.innerHTML='<b>【'+groupOf(state.activeGroup).name+'】结论：'+best.name+'（'+best.variant+'）胜出</b><p>点击率 '+pct(best.ctr)+'，高于达标版均值 '+pct(avg)+' 的 '+s.uplift+'% 门槛。<br><b>下一步：咨询原话复核 → 打样 → 裂变独立链接做实物验证。图测只是方向，不是结论。</b></p>';
+  }else{
+    v.innerHTML='<b>【'+groupOf(state.activeGroup).name+'】结论：差距未达门槛</b><p>最高是 '+best.name+'（'+pct(best.ctr)+'），但没有比达标版均值 '+pct(avg)+' 高出 '+s.uplift+'%。<br>建议：延长观察或换一批创意，不要硬选一版去开模。</p>';
+  }
+}
+
+
+/* ================= 模块一 · 每块一个 sheet 窗口 ================= */
+var M1TABS=[
+  ['s1','①','思维底层'],
+  ['s2','②','流程框架'],
+  ['s5','③','创意框架'],
+  ['s3','④','计划框架'],
+  ['s6','⑤','创意上传'],
+  ['s7','⑥','数据记录'],
+  ['s4','⑦','标准与看板'],
+  ['s8','⑧','测试款']
+];
+function renderM1Tabs(){
+  var box=$('m1Tabs'); if(!box) return;
+  box.innerHTML='';
+  M1TABS.forEach(function(t){
+    var b=document.createElement('button');
+    b.className='m1t'+(t[0]===state.m1Tab? ' on' : '');
+    b.setAttribute('data-m1', t[0]);
+    b.title=t[1]+' '+t[2];
+    b.innerHTML='<b>'+t[1]+'</b>'+t[2];
+    box.appendChild(b);
+  });
+  M1TABS.forEach(function(t){
+    var sec=$(t[0]); if(!sec) return;
+    if(t[0]===state.m1Tab){ sec.classList.add('on'); } else { sec.classList.remove('on'); }
+  });
+}
+function goM1(id){
+  var ok=false;
+  M1TABS.forEach(function(t){ if(t[0]===id) ok=true; });
+  if(!ok) return;
+  state.m1Tab=id; save(); renderM1Tabs();
+  if(id==='s8') renderTestList();
+  try{ if((window.pageYOffset||0)>0) window.scrollTo(0,0); }catch(e){}
+}
+$('m1Tabs').addEventListener('click', function(e){
+  var b=e.target.closest('[data-m1]');
+  if(!b) return;
+  goM1(b.getAttribute('data-m1'));
+});
+
+
+/* ===== ⑧ 测试款总览 ===== */
+function creAggAll(c){
+  var a={impr:0,clicks:0,cost:0,cons:0,cart:0,orders:0,days:{}};
+  state.rows.forEach(function(r){
+    if(r.cid!==c.id) return;
+    a.impr+=+r.impr||0; a.clicks+=+r.clicks||0; a.cost+=+r.cost||0; a.cons+=+r.cons||0;
+    a.cart+=+r.cart||0;  a.orders+=+r.orders||0;
+    a.days[r.date]=1;
+  });
+  a.n=Object.keys(a.days).length;
+  a.ctr=a.impr? a.clicks/a.impr : null;
+  a.cartRate=a.clicks? a.cart/a.clicks : null;
+  a.cvr=a.clicks? a.orders/a.clicks : null;
+  a.cpc=a.clicks? a.cost/a.clicks : null;
+  return a;
+}
+function renderTestList(){
+  var g=$('tGrid'); if(!g) return;
+  var list=[];
+  state.creatives.forEach(function(c){
+    var grp=groupOf(c.gid);
+    list.push({c:c, g:grp, a:creAggAll(c), gi:state.groups.indexOf(grp)});
+  });
+  list.sort(function(x,y){
+    if(x.gi!==y.gi) return x.gi-y.gi;
+    return (x.c.name<y.c.name)? -1 : (x.c.name>y.c.name? 1 : 0);
+  });
+  var withImg=0, ti=0, tc=0, tcost=0, tcons=0, tcart=0, tord=0;
+  list.forEach(function(o){
+    if(o.c.img) withImg++;
+    ti+=o.a.impr; tc+=o.a.clicks; tcost+=o.a.cost; tcons+=o.a.cons; tcart+=o.a.cart; tord+=o.a.orders;
+  });
+  var st=$('tStat');
+  if(st) st.innerHTML=
+    '<div><b>在测创意位</b><span>'+list.length+' 个</span></div>'+
+    '<div><b>已有图片</b><span>'+withImg+' 张</span></div>'+
+    '<div><b>累计展现</b><span>'+ti+'</span></div>'+
+    '<div><b>累计点击</b><span>'+tc+'</span></div>'+
+    '<div><b>累计花费</b><span>'+money(tcost)+'</span></div>'+
+    '<div><b>累计咨询</b><span>'+tcons+'</span></div>'+
+    '<div><b>累计加购</b><span>'+tcart+'</span></div>'+
+    '<div><b>累计成交</b><span>'+tord+' 单</span></div>';
+  if(!list.length){
+    g.innerHTML='<div class="card" style="grid-column:1/-1;text-align:center;color:var(--mut,#847b68);padding:26px">还没有创意位 —— 先去 ⑤ 创意上传建位、传图。</div>';
+    return;
+  }
+  var h='';
+  list.forEach(function(o){
+    var a=o.a, c=o.c;
+    var img=c.img? '<img src="'+c.img+'" alt="">' : '<span class="noimg">未上传图片</span>';
+    function cell(label, val){
+      var zero=(val===0 || val==='0' || val==='—');
+      return '<div><b>'+label+'</b><span'+(zero?' class="zero"':'')+'>'+val+'</span></div>';
+    }
+    h+='<div class="tcard" data-cid="'+c.id+'">'+
+      '<div class="im">'+img+'</div>'+
+      '<div class="hd"><b>'+esc(c.name)+'</b><span>'+esc(c.variant||'未命名')+'</span>'+
+        '<em>'+esc(o.g? o.g.name.replace(/\s+/g,'') : '')+' · '+(a.n? a.n+' 天':'无数据')+'</em></div>'+
+      '<div class="kv2">'+
+        cell('展现量', a.impr)+
+        cell('点击量', a.clicks)+
+        cell('点击率', pct(a.ctr))+
+        cell('花费', money(a.cost))+
+        cell('CPC', money(a.cpc))+
+        cell('咨询人数', a.cons)+
+        cell('加购量', a.cart)+
+        cell('加购率', pct(a.cartRate))+
+        cell('成交量', a.orders)+
+        cell('转化率', pct(a.cvr))+
+      '</div>'+
+    '</div>';
+  });
+  g.innerHTML=h;
+}
+
+/* ================= 模块二 · 第一批海选链接 ================= */
+var DEF_PAGE='pg1';
+function goPage(id){
+  if(!$(id)) id=DEF_PAGE;
+  Array.prototype.forEach.call(document.querySelectorAll('.page'), function(p){
+    if(p.id===id){ p.classList.add('on'); } else { p.classList.remove('on'); }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.mod'), function(b){
+    if(b.getAttribute('data-pg')===id){ b.classList.add('on'); } else { b.classList.remove('on'); }
+  });
+  var n1=$('nav1'), n2=$('nav2');
+  if(n1) n1.style.display=(id==='pg1')?'flex':'none';
+  if(n2) n2.style.display=(id==='pg2')?'flex':'none';
+  state.pg=id; save();
+  try{ if((window.pageYOffset||0)>0) window.scrollTo(0,0); }catch(e){}
+}
+Array.prototype.forEach.call(document.querySelectorAll('.mod'), function(b){
+  b.addEventListener('click', function(){ goPage(b.getAttribute('data-pg')); });
+});
+
+var RKEYS=[['img','图'],['title','题'],['price','价'],['sku','SKU'],['detail','详'],['stock','货']];
+var GOODS=['现有货裂变','打样新品','预售'];
+var STAGE_TXT={wait:'待装配',ready:'可上架',live:'已上架',out:'已淘汰'};
+var VERD_TXT={up:'晋级',watch:'观察',out:'淘汰',none:'未开跑'};
+
+function nextLinkName(){
+  var used={}, n=1;
+  state.links.forEach(function(l){ used[l.name]=1; });
+  while(used['L'+(n<10?'0'+n:''+n)]) n++;
+  return 'L'+(n<10?'0'+n:''+n);
+}
+function newLink(){
+  return { id:'l'+Date.now()+'_'+Math.random().toString(36).slice(2,5), name:nextLinkName(),
+           cid:'', variant:'', goods:GOODS[0], price:0, sku:'', kw:'', launch:'',
+           pos:'', concern:'', advantage:'', imgMain:'', comp:['','',''], compName:['','',''], micro:['','','','',''],
+           r:{img:false,title:false,price:false,sku:false,detail:false,stock:false}, dead:false };
+}
+function lkReady(l){ var n=0; RKEYS.forEach(function(k){ if(l.r && l.r[k[0]]) n++; }); return n; }
+function lkStage(l){
+  if(l.dead) return 'out';
+  var ready=(lkReady(l)===6), has=!!l.launch;
+  if(ready && has) return 'live';
+  if(ready) return 'ready';
+  return 'wait';
+}
+function creLabel(c){
+  if(!c) return '';
+  var g=groupOf(c.gid);
+  return (g? g.name.replace(/\s+/g,'')+' / ' : '')+c.name+(c.variant? ' · '+c.variant : '');
+}
+
+/* --- 从模块一算创意点击率（跳过学习期） --- */
+function creStat(c){
+  var skip=learnDates(c.id), days={}, impr=0, clicks=0, cons=0;
+  state.rows.forEach(function(r){
+    if(r.cid!==c.id) return;
+    if(skip && skip[r.date]) return;
+    days[r.date]=1; impr+=+r.impr||0; clicks+=+r.clicks||0; cons+=+r.cons||0;
+  });
+  return { n:Object.keys(days).length, impr:impr, clicks:clicks, cons:cons, ctr:(impr? clicks/impr : null) };
+}
+
+/* --- 链接清单渲染 --- */
+function renderLinks(){
+  var tb=$('linkBody'); if(!tb) return;
+  tb.innerHTML='';
+  if(!state.links.length){
+    tb.innerHTML='<tr><td colspan="11" style="text-align:center;color:#847b68;padding:22px">还没有链接——点上面「从测图胜出版带入」，或手动「＋ 增加一条链接」。</td></tr>';
+  }
+  var opts='<option value="">— 不关联 —</option>';
+  state.creatives.forEach(function(c){ opts+='<option value="'+c.id+'">'+esc(creLabel(c))+'</option>'; });
+  state.links.forEach(function(l,i){
+    var st=lkStage(l), rd=lkReady(l), cks='';
+    RKEYS.forEach(function(k){
+      var on=(l.r && l.r[k[0]])?' checked':'';
+      cks+='<label class="'+(on?'on':'')+'" title="'+k[1]+'"><input type="checkbox" data-li="'+i+'" data-rk="'+k[0]+'"'+on+'><span>'+k[1]+'</span></label>';
+    });
+    var tr=document.createElement('tr');
+    tr.innerHTML=
+      '<td><input data-li="'+i+'" data-lf="name" value="'+esc(l.name)+'" style="width:78px"></td>'+
+      '<td><select data-li="'+i+'" data-lf="cid" data-cid="'+i+'" style="max-width:170px">'+opts+'</select></td>'+
+      '<td><input data-li="'+i+'" data-lf="variant" value="'+esc(l.variant)+'" placeholder="这版卖什么" style="width:118px"></td>'+
+      '<td><select data-li="'+i+'" data-lf="goods">'+GOODS.map(function(g){ return '<option'+(l.goods===g?' selected':'')+'>'+g+'</option>'; }).join('')+'</select></td>'+
+      '<td><input type="number" step="0.1" data-li="'+i+'" data-lf="price" value="'+(l.price||'')+'" placeholder="0" style="width:72px"></td>'+
+      '<td><input data-li="'+i+'" data-lf="sku" value="'+esc(l.sku)+'" placeholder="3 色 × 4 规格" style="width:112px"></td>'+
+      '<td><input data-li="'+i+'" data-lf="kw" value="'+esc(l.kw)+'" placeholder="主攻词路" style="width:118px"></td>'+
+      '<td><input type="date" data-li="'+i+'" data-lf="launch" value="'+(l.launch||'')+'"></td>'+
+      '<td><div class="ck6">'+cks+'</div></td>'+
+      '<td><span class="stg '+st+'">'+STAGE_TXT[st]+(rd>0&&rd<6? ' '+rd+'/6':'')+'</span></td>'+
+      '<td><button class="del2" data-dl="'+i+'">删</button></td>';
+    tb.appendChild(tr);
+  });
+  Array.prototype.forEach.call(tb.querySelectorAll('select[data-cid]'), function(sel){
+    var i=+sel.getAttribute('data-cid');
+    sel.value=state.links[i].cid||'';
+  });
+  renderLinkWarn();
+}
+function renderLinkWarn(){
+  var box=$('linkWarn'); if(!box) return;
+  var byDate={}, dup=[], wait=0, ready=0, live=0;
+  state.links.forEach(function(l){
+    if(l.launch){ byDate[l.launch]=(byDate[l.launch]||0)+1; }
+    var s=lkStage(l);
+    if(s==='wait') wait++; else if(s==='ready') ready++; else if(s==='live') live++;
+  });
+  Object.keys(byDate).forEach(function(d){ if(byDate[d]>1) dup.push(d+' 有 '+byDate[d]+' 条'); });
+  var h='';
+  if(dup.length) h+='<div class="note w" style="margin-top:12px"><span class="ic">⚠</span><span><b>同日上架撞车：</b>'+dup.join('、')+'——同一天上多条会自己抢自己，建议错开 1–2 天。</span></div>';
+  if(state.links.length) h+='<div style="font-size:12px;color:var(--mut);margin-top:10px">共 '+state.links.length+' 条：待装配 '+wait+'、可上架 '+ready+'、已上架 '+live+'</div>';
+  box.innerHTML=h;
+}
+function updateHeroM2(){
+  var ready=0, live=0, up=0, e;
+  state.links.forEach(function(l){
+    var st=lkStage(l);
+    if(st==='ready') ready++;
+    if(st==='live') live++;
+    if(poolVerdictOf(l)==='up') up++;
+  });
+  e=$('kvLinks'); if(e) e.textContent=state.links.length+' 条';
+  e=$('kvReady'); if(e) e.textContent=ready+' 条';
+  e=$('kvLive'); if(e) e.textContent=live+' 条';
+  e=$('kvUp'); if(e) e.textContent=up+' 条';
+}
+
+
+/* --- 链接定位与视觉资产 --- */
+function lkAssetsHtml(l){
+  var comp=l.comp||['','',''];
+  var cn=l.compName||['','',''];
+  var mic=l.micro||['','','','',''];
+  function slot(key, src, cap, extra){
+    var inner = src? '<img src="'+src+'" alt=""><i class="clr" data-clr="'+key+'" title="清除">×</i>'
+                   : '<span class="plus">＋</span>';
+    if(cap) inner+='<span class="cap">'+cap+'</span>';
+    return '<div class="aslot'+(extra?' '+extra:'')+'" data-slot="'+key+'" data-lid="'+l.id+'" title="点击上传 / 替换">'+inner+'</div>';
+  }
+  var compHtml='';
+  for(var i=0;i<3;i++){
+    compHtml+='<div style="display:flex;flex-direction:column;gap:4px">'+
+      slot('comp'+i, comp[i], '对标 '+(i+1))+ 
+      '<input class="asname" data-compname="'+i+'" data-lid="'+l.id+'" value="'+esc(cn[i]||'')+'" placeholder="店名/链接">'+
+    '</div>';
+  }
+  var mr=(l.microRatio==='3:4')? '3:4' : '1:1';
+  var micHtml='';
+  for(var j=0;j<5;j++){ micHtml+=slot('micro'+j, mic[j], ''); }
+  return '<div class="lkw-id">'+
+    '<div class="posrow"><label>需求定位</label>'+
+      '<input data-pos="1" data-lid="'+l.id+'" value="'+esc(l.pos||'')+'" placeholder="一句话：卖给谁 · 解决什么需求 · 凭什么选我（例：入户门地垫，怕脏怕滑的租房党，丝圈可裁剪不掉毛）">'+
+    '</div>'+
+    '<div class="asrow">'+
+      '<div class="asleft">'+
+        '<div class="asline">'+
+          '<div class="asgrp"><h6>自己<b>主图</b></h6><div class="asslots">'+slot('main', l.imgMain||'', '', 'main')+'</div></div>'+
+          '<div class="asgrp"><h6>对标<b>主图 ×3</b></h6><div class="asslots">'+compHtml+'</div></div>'+
+        '</div>'+
+      '<div class="asgrp micro"><h6>自己的<b>微详情 ×5</b>'+
+        '<span class="ratio-sw">'+
+          '<button data-mr="1:1" data-lid="'+l.id+'" class="'+(mr==='1:1'?'on':'')+'">1:1</button>'+
+          '<button data-mr="3:4" data-lid="'+l.id+'" class="'+(mr==='3:4'?'on':'')+'">3:4</button>'+
+        '</span>'+
+        (mr==='3:4'? '<span style="font-weight:500;color:#b9b2a1">竖图按 3:4 排</span>' : '')+
+      '</h6><div class="asslots'+(mr==='3:4'?' r43':'')+'">'+micHtml+'</div></div>'+
+      '</div>'+
+      '<div class="asright">'+
+        '<div class="tb"><label>买家核心关心点</label>'+
+          '<textarea data-txt="concern" data-lid="'+l.id+'" placeholder="买家下单前最纠结什么？（例：掉不掉毛 / 能不能裁剪 / 会不会滑 / 味道大不大）">'+esc(l.concern||'')+'</textarea>'+
+        '</div>'+
+        '<div class="tb"><label>产品核心竞争优势</label>'+
+          '<textarea data-txt="advantage" data-lid="'+l.id+'" placeholder="凭什么选我？（例：丝圈加密 30% 不掉毛 / 免费送裁剪刀 / 背面满胶不打滑）">'+esc(l.advantage||'')+'</textarea>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+}
+
+/* --- 链接窗口指标表（10 个核心指标全覆盖） --- */
+var LMETRICS=[
+  {k:'impr',    n:'展现',     u:'num',   f:function(s){ return s.impr; }},
+  {k:'clicks',  n:'点击',     u:'num',   f:function(s){ return s.clicks; }},
+  {k:'ctr',     n:'点击率',   u:'pct',   f:function(s){ return s.impr? s.clicks/s.impr : 0; }},
+  {k:'cost',    n:'花费',     u:'money', f:function(s){ return s.cost; }},
+  {k:'cpc',     n:'CPC',      u:'money', f:function(s){ return s.clicks? s.cost/s.clicks : 0; }},
+  {k:'cart',    n:'加购',     u:'num',   f:function(s){ return s.cart||0; }},
+  {k:'cartRate',n:'加购率',   u:'pct',   f:function(s){ return s.clicks? (s.cart||0)/s.clicks : 0; }},
+  {k:'fav',     n:'收藏',     u:'num',   f:function(s){ return s.fav||0; }},
+  {k:'favRate', n:'收藏率',   u:'pct',   f:function(s){ return s.clicks? (s.fav||0)/s.clicks : 0; }},
+  {k:'orders',  n:'成交订单', u:'num',   f:function(s){ return s.orders||0; }},
+  {k:'cvr',     n:'转化率',   u:'pct',   f:function(s){ return s.clicks? (s.orders||0)/s.clicks : 0; }},
+  {k:'aov',     n:'客单价',   u:'money', f:function(s){ return s.orders? (s.gmv||0)/s.orders : 0; }}
+];
+
+function lkLaunchOf(l){
+  if(l.launch) return l.launch;
+  var ds=state.linkRows.filter(function(r){ return r.lid===l.id; }).map(function(r){ return r.date; }).sort();
+  return ds.length? ds[0] : '';
+}
+function addDays(d,n){
+  var t=new Date(d+'T00:00:00');
+  if(isNaN(t.getTime())) return d;
+  t.setDate(t.getDate()+n);
+  return ymd(t);
+}
+/* 按日聚合（已按窗口过滤）——图表和 KPI 都用它，保证两者一致 */
+function lkSeries(l){
+  var win=0;            /* 统计窗口已取消：永远统计全部已录数据 */
+  var from=lkLaunchOf(l);
+  var to='';
+  var map={};
+  state.linkRows.forEach(function(r){
+    if(r.lid!==l.id) return;
+    if(to && (r.date<from || r.date>to)) return;
+    if(!map[r.date]) map[r.date]={date:r.date, impr:0, clicks:0, cost:0, cons:0, cart:0, fav:0, orders:0, gmv:0};
+    var m=map[r.date];
+    m.impr+=+r.impr||0;   m.clicks+=+r.clicks||0; m.cost+=+r.cost||0;
+    m.cons+=+r.cons||0;   m.cart+=+r.cart||0;     m.fav+=+r.fav||0;
+    m.orders+=+r.orders||0; m.gmv+=+r.gmv||0;
+  });
+  return Object.keys(map).sort().map(function(d){ return map[d]; });
+}
+function lkAgg(l){
+  var arr=lkSeries(l);
+  var a={days:{},impr:0,clicks:0,cost:0,cons:0,cart:0,fav:0,orders:0,gmv:0,n:0};
+  arr.forEach(function(s){
+    a.days[s.date]=1;
+    a.impr+=s.impr; a.clicks+=s.clicks; a.cost+=s.cost; a.cons+=s.cons;
+    a.cart+=s.cart; a.fav+=s.fav; a.orders+=s.orders; a.gmv+=s.gmv;
+  });
+  a.n=arr.length;
+  a.ctr=a.impr? a.clicks/a.impr : null;
+  a.cpc=a.clicks? a.cost/a.clicks : null;
+  a.cartRate=a.clicks? a.cart/a.clicks : null;
+  a.favRate=a.clicks? a.fav/a.clicks : null;
+  a.cvr=a.clicks? a.orders/a.clicks : null;
+  a.aov=a.orders? a.gmv/a.orders : null;
+  return a;
+}
+function lkScore(l){
+  var a=lkAgg(l), th=state.lkThr||{}, std=state.std||{};
+  var arr=[];
+  /* 样本门槛常驻（决定"判不判得动"），其余指标填了才参与（与创意图筛选同一套逻辑） */
+  arr.push({k:'sample', n:'样本够', on:true, ok:(a.clicks>=(+th.minClicks||0) && a.impr>=(+th.minImpr||0))});
+  arr.push({k:'ctr',      n:'点击率', on:(+th.ctr>0),      ok:(a.ctr!=null && (a.ctr*100)>=(+th.ctr||0))});
+  arr.push({k:'cartRate', n:'加购率', on:(+th.cartRate>0), ok:(a.cartRate!=null && (a.cartRate*100)>=(+th.cartRate||0))});
+  arr.push({k:'favRate',  n:'收藏率', on:(+th.favRate>0),  ok:(a.favRate!=null && (a.favRate*100)>=(+th.favRate||0))});
+  arr.push({k:'cvr',      n:'转化率', on:(+th.cvr>0),      ok:(a.cvr!=null && (a.cvr*100)>=(+th.cvr||0))});
+  arr.push({k:'aov',      n:'客单价', on:(+th.aov>0),      ok:(a.aov!=null && a.aov>=(+th.aov||0))});
+  var hit=0, total=0;
+  arr.forEach(function(x){ if(x.on){ total++; if(x.ok) hit++; } });
+  return {a:a, arr:arr, hit:hit, total:total};
+}
+function poolVerdictOf(l){
+  var r=lkScore(l), a=r.a;
+  if(!a.n) return 'none';
+  if(!r.arr[0].ok) return 'watch';
+  var rate=r.total? r.hit/r.total : 0;
+  if(rate>=0.75) return 'up';
+  if(rate>=0.5) return 'watch';
+  return 'out';
+}
+
+/* --- 链接窗口渲染 --- */
+function lkCardOne(l){
+  var th=state.lkThr||{}, a=lkAgg(l), st=lkStage(l), rd=lkReady(l), series=lkSeries(l);
+  var hiCtr  = (a.ctr!=null && (a.ctr*100)>=(+th.ctr||0));
+  var hiCart = (a.cartRate!=null && (a.cartRate*100)>=(+th.cartRate||0));
+  var hiCvr  = (a.cvr!=null && (a.cvr*100)>=(+th.cvr||0));
+  var kpi=[
+    ['总展现',   a.impr, false],
+    ['总点击',   a.clicks, false],
+    ['点击率',   a.ctr!=null? pct(a.ctr) : '—', hiCtr],
+    ['总花费',   money(a.cost), false],
+    ['CPC',      a.cpc!=null? money(a.cpc) : '—', false],
+    ['加购数',   a.cart, false],
+    ['加购率',   a.cartRate!=null? pct(a.cartRate) : '—', hiCart],
+    ['收藏数',   a.fav, false],
+    ['收藏率',   a.favRate!=null? pct(a.favRate) : '—', false],
+    ['成交订单', a.orders, false],
+    ['转化率',   a.cvr!=null? pct(a.cvr) : '—', hiCvr],
+    ['客单价',   a.aov!=null? money(a.aov) : '—', false]
+  ];
+  var kpiHtml='';
+  kpi.forEach(function(k){
+    kpiHtml+='<div class="'+(k[2]?'hi':'')+'"><b>'+k[0]+'</b><span>'+k[1]+'</span></div>';
+  });
+
+  var chips='';
+  LMETRICS.forEach(function(m){
+    chips+='<button class="mc'+(m.k===state.lkMetric?' on':'')+'" data-lm="'+m.k+'">'+m.n+'</button>';
+  });
+
+  /* 按日明细：全部行，不受窗口限制，方便回看和删错 */
+  var rows=state.linkRows.filter(function(r){ return r.lid===l.id; })
+    .sort(function(x,y){ return x.date<y.date? 1 : (x.date>y.date? -1 : 0); });
+  var tbody='';
+  if(!rows.length){
+    tbody='<tr><td colspan="16" style="text-align:center;color:#847b68;padding:16px">这个窗口还没有数据，用上面的表单记一条。</td></tr>';
+  }else{
+    rows.forEach(function(r){
+      var ctr=(r.impr>0)? r.clicks/r.impr : null;
+      var cpc=(r.clicks>0)? r.cost/r.clicks : null;
+      var cr =(r.clicks>0)? (r.cart||0)/r.clicks : null;
+      var fr =(r.clicks>0)? (r.fav||0)/r.clicks : null;
+      var cvr=(r.clicks>0)? (r.orders||0)/r.clicks : null;
+      var aov=(r.orders>0)? (r.gmv||0)/r.orders : null;
+      tbody+='<tr><td>'+r.date+'</td><td class="num">'+r.impr+'</td><td class="num">'+r.clicks+'</td>'+
+        '<td class="num">'+pct(ctr)+'</td><td class="num">'+money(r.cost)+'</td><td class="num">'+money(cpc)+'</td>'+
+        '<td class="num">'+(r.cons||0)+'</td><td class="num">'+(r.cart||0)+'</td><td class="num">'+pct(cr)+'</td>'+
+        '<td class="num">'+(r.fav||0)+'</td><td class="num">'+pct(fr)+'</td>'+
+        '<td class="num">'+(r.orders||0)+'</td><td class="num">'+pct(cvr)+'</td>'+
+        '<td class="num">'+money(r.gmv||0)+'</td><td class="num">'+money(aov)+'</td>'+
+        '<td><button class="del2" data-dlr="'+r.id+'">删</button></td></tr>';
+    });
+  }
+
+  var meta=[];
+  if(l.goods) meta.push(l.goods);
+  if(l.price>0) meta.push('¥'+l.price);
+  if(l.sku) meta.push(l.sku);
+  meta.push(l.launch? ('上架 '+l.launch) : '未填上架日');
+  meta.push('已跑 '+(a.n? a.n+' 天' : '0 天'));
+  if(rd>0 && rd<6) meta.push('装配 '+rd+'/6');
+
+  return '<div class="lkw" id="lkw-'+l.id+'" data-lid="'+l.id+'">'+
+    '<div class="lkw-h">'+
+      '<span class="id">'+esc(l.name)+'</span>'+
+      '<span class="vv">'+esc(l.variant||'未命名款式')+'</span>'+
+      '<span class="stg '+st+'">'+STAGE_TXT[st]+'</span>'+
+      '<span class="meta">'+esc(meta.join('　·　'))+'</span>'+
+    '</div>'+
+    lkAssetsHtml(l)+
+    '<div class="lkw-kpi">'+kpiHtml+'</div>'+
+    '<div class="lkw-form">'+
+      '<div class="fld"><label>日期</label><input type="date" data-f="date" value="'+todayYmd()+'"></div>'+
+      '<div class="fld"><label>展现</label><input type="number" min="0" data-f="impr" placeholder="0"></div>'+
+      '<div class="fld"><label>点击</label><input type="number" min="0" data-f="clicks" placeholder="0"></div>'+
+      '<div class="fld"><label>花费(元)</label><input type="number" min="0" step="0.01" data-f="cost" placeholder="0"></div>'+
+      '<div class="fld"><label>咨询</label><input type="number" min="0" data-f="cons" placeholder="0"></div>'+
+      '<div class="fld"><label>加购</label><input type="number" min="0" data-f="cart" placeholder="0"></div>'+
+      '<div class="fld"><label>收藏</label><input type="number" min="0" data-f="fav" placeholder="0"></div>'+
+      '<div class="fld"><label>成交订单</label><input type="number" min="0" data-f="orders" placeholder="0"></div>'+
+      '<div class="fld"><label>成交金额(元)</label><input type="number" min="0" step="0.01" data-f="gmv" placeholder="0"></div>'+
+      '<div class="fld"><label>备注</label><input type="text" data-f="note" placeholder="问的最多的是…"></div>'+
+    '</div>'+
+    '<div class="btnrow" style="margin-top:10px">'+
+      '<button class="btn" data-addrow="'+l.id+'">记一条</button>'+
+      '<button class="btn ghost" data-fill="'+l.id+'" title="从当前最早的数据日期往前倒推补 7 天（无缝接上、不会重叠）；还没有数据时＝补最近 7 天">补 7 天示例</button>'+
+      '<span style="font-size:12px;color:var(--mut);align-self:center">点击率 / 加购率 / 收藏率 / 转化率 / 客单价 全部自动算，不用填</span>'+
+    '</div>'+
+    '<div class="lkw-tool"><div class="mchips">'+chips+'</div>'+
+      '<div class="ctype">'+
+        '<button data-lt="line" class="'+(state.lkType==='line'?'on':'')+'">折线</button>'+
+        '<button data-lt="bar" class="'+(state.lkType==='bar'?'on':'')+'">柱状</button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="lkw-chart" data-chartbox>'+ chartSVG(series, state.lkMetric, state.lkType, LMETRICS, '这条链接在这个窗口内还没有数据') +'</div>'+
+    '<div class="tblwrap" style="margin-top:12px"><div class="scrollx">'+
+      '<table class="dt" style="min-width:1240px"><thead><tr>'+
+        '<th>日期</th><th>展现</th><th>点击</th><th>点击率</th><th>花费</th><th>CPC</th>'+
+        '<th>咨询</th><th>加购</th><th>加购率</th><th>收藏</th><th>收藏率</th>'+
+        '<th>成交订单</th><th>转化率</th><th>成交金额</th><th>客单价</th><th>操作</th>'+
+      '</tr></thead><tbody>'+tbody+'</tbody></table>'+
+    '</div></div>'+
+  '</div>';
+}
+/* 只换这一张卡：别的卡里填到一半的内容不会被冲掉 */
+function refreshCard(lid){
+  /* 只重画当前页签，别的 sheet 不受影响 */
+  renderLkTabs();
+  if(lid && lid!==state.lkActive) return;
+  renderLkPane();
+  renderLkStatus();
+}
+/* ===== 测试链接定位 sheet（第一个页签）===== */
+var LOC_ID='__loc__';
+function locSheetHtml(){
+  var wait=0, ready=0, live=0;
+  state.links.forEach(function(l){
+    var st=lkStage(l);
+    if(st==='wait') wait++; else if(st==='ready') ready++; else if(st==='live') live++;
+  });
+  return '<div class="lkbox lkloc" id="lkw-loc">'+
+    '<div class="lkw-h">'+
+      '<span class="id">测试链接定位</span>'+
+      '<span class="vv">第一批海选链接</span>'+
+      '<span class="meta">共 '+state.links.length+' 条：待装配 '+wait+'、可上架 '+ready+'、已上架 '+live+'</span>'+
+    '</div>'+
+    '<div class="btnrow" style="margin-top:12px">'+
+      '<button class="btn" id="genLinks" data-act="genLinks">从测图胜出版带入</button>'+
+      '<button class="btn ghost" id="addLink" data-act="addLink">＋ 增加一条链接</button>'+
+      '<button class="btn ghost" id="demoLinks" data-act="demoLinks">填入示例（3 条）</button>'+
+      '<span style="font-size:12px;color:var(--mut);align-self:center">「带入」只取模块一里<b>样本够、点击率跑赢均值</b>的创意，不替你硬选</span>'+
+    '</div>'+
+    '<div id="linkWarn"></div>'+
+    '<div class="tblwrap" style="margin-top:14px"><div class="scrollx">'+
+      '<table class="dt" id="linkTable" style="min-width:1240px">'+
+        '<thead><tr>'+
+          '<th>链接编号</th><th>来源创意</th><th>款式定义</th><th>货品策略</th><th>定价</th>'+
+          '<th>SKU 结构</th><th>目标词路</th><th>上架日</th><th>装配核对</th><th>状态</th><th>操作</th>'+
+        '</tr></thead>'+
+        '<tbody id="linkBody"></tbody>'+
+      '</table>'+
+    '</div></div>'+
+    '<div class="note b" style="margin-top:12px"><span class="ic">ℹ</span><span><b>货品策略决定后面怎么看数：</b>'+
+      '「现有货裂变」＝ 拿爆款同款换图换标题，最快，但会和爆款抢流量，点击率必须跟爆款对照组比；'+
+      '「打样新品」＝ 真正的研发款，点击率可以独立看；「预售」＝ 先挂单抢时间，要盯退款与发货承诺。</span></div>'+
+    '<div class="note w" style="margin-top:10px"><span class="ic">⚠</span><span><b>装配 6 项没打齐，不给「已上架」状态。</b>'+
+      '图、题、价、SKU、详、货缺一项就是带病上阵——带病上架的数据，既不能判活也不能判死，白烧预算。</span></div>'+
+  '</div>';
+}
+
+/* ===== 汇总 sheet ===== */
+var SUM_ID='__sum__';
+function sumAgg(){
+  var t={n:state.links.length, live:0, ready:0, impr:0, clicks:0, cost:0, cons:0, cart:0, fav:0, orders:0, gmv:0, up:0, watch:0, out:0, none:0, withData:0};
+  state.links.forEach(function(l){
+    var a=lkAgg(l), v=poolVerdictOf(l), st=lkStage(l);
+    if(st==='live') t.live++;
+    if(st==='ready') t.ready++;
+    if(a.n) t.withData++;
+    t.impr+=a.impr; t.clicks+=a.clicks; t.cost+=a.cost; t.cons+=a.cons;
+    t.cart+=a.cart; t.fav+=a.fav; t.orders+=a.orders; t.gmv+=a.gmv;
+    if(v==='up') t.up++; else if(v==='watch') t.watch++; else if(v==='out') t.out++; else t.none++;
+  });
+  t.ctr=t.impr? t.clicks/t.impr : null;
+  t.cpc=t.clicks? t.cost/t.clicks : null;
+  t.cartRate=t.clicks? t.cart/t.clicks : null;
+  t.favRate=t.clicks? t.fav/t.clicks : null;
+  t.cvr=t.clicks? t.orders/t.clicks : null;
+  t.aov=t.orders? t.gmv/t.orders : null;
+  return t;
+}
+/* ===== 链接主图 sheet（第二页签）：一行 3 张主图 + 10 项指标 ===== */
+var IMG_ID='__imgs__';
+function imgSheetHtml(){
+  var th=state.lkThr||{};
+  var list=[];
+  var tot={n:0, withImg:0, impr:0, clicks:0, cost:0, cons:0, cart:0, orders:0};
+  state.links.forEach(function(l){
+    var a=lkAgg(l);
+    var o={l:l, a:a, v:poolVerdictOf(l)};
+    list.push(o);
+    tot.n++; if(l.imgMain) tot.withImg++;
+    tot.impr+=a.impr; tot.clicks+=a.clicks; tot.cost+=a.cost;
+    tot.cons+=a.cons; tot.cart+=a.cart; tot.orders+=a.orders;
+  });
+  var st='<div class="tstat">'+
+    '<div><b>在测链接</b><span>'+tot.n+' 条</span></div>'+
+    '<div><b>已有主图</b><span>'+tot.withImg+' 张</span></div>'+
+    '<div><b>累计展现</b><span>'+tot.impr+'</span></div>'+
+    '<div><b>累计点击</b><span>'+tot.clicks+'</span></div>'+
+    '<div><b>累计花费</b><span>'+money(tot.cost)+'</span></div>'+
+    '<div><b>累计咨询</b><span>'+tot.cons+'</span></div>'+
+    '<div><b>累计加购</b><span>'+tot.cart+'</span></div>'+
+    '<div><b>累计成交</b><span>'+tot.orders+' 单</span></div>'+
+  '</div>';
+  if(!list.length){
+    return '<div class="lkbox lksum"><div style="padding:26px;text-align:center;color:var(--mut,#847b68)">还没有链接 —— 先在「测试链接定位」建第一批。</div></div>';
+  }
+  var h='';
+  function cell(label,val){
+    var zero=(val===0 || val==='0' || val==='—' || val==='0.00');
+    return '<div><b>'+label+'</b><span'+(zero?' class="zero"':'')+'>'+val+'</span></div>';
+  }
+  list.forEach(function(o){
+    var l=o.l, a=o.a;
+    var img = l.imgMain? '<img src="'+l.imgMain+'" alt="">' : '<span class="noimg">未上传主图</span>';
+    h+='<div class="tcard" data-goto="'+l.id+'" title="点击打开这条链接的 sheet">'+
+      '<div class="im">'+img+'</div>'+
+      '<div class="hd"><b>'+esc(l.name)+'</b><span>'+esc(l.variant||'未命名')+'</span>'+
+        '<em>'+esc(l.goods||'')+' · '+(a.n? a.n+' 天':'无数据')+'</em></div>'+
+      '<div class="kv2">'+
+        cell('展现量', a.impr)+
+        cell('点击量', a.clicks)+
+        cell('点击率', pct(a.ctr))+
+        cell('花费', money(a.cost))+
+        cell('CPC', money(a.cpc))+
+        cell('咨询人数', a.cons)+
+        cell('加购量', a.cart)+
+        cell('加购率', pct(a.cartRate))+
+        cell('成交量', a.orders)+
+        cell('转化率', pct(a.cvr))+
+      '</div>'+
+    '</div>';
+  });
+  return '<div class="lkbox lksum">'+
+    '<div class="lkw-h">'+
+      '<span class="id">链接主图</span>'+
+      '<span class="vv">全批主图总览 · '+tot.n+' 条</span>'+
+      '<span class="meta">一行 3 张 · 点卡片可打开该链接的 sheet　·　指标为该链接全部累计</span>'+
+    '</div>'+
+    st+
+    '<div class="tgrid" style="margin-top:4px">'+h+'</div>'+
+  '</div>';
+}
+
+function sumSheetHtml(){
+  var t=sumAgg(), th=state.lkThr||{}, win=+state.lkWin||0, std=state.std||{};
+  var hiCtr=(t.ctr!=null && (t.ctr*100)>=(+th.ctr||0));
+  var hiCart=(t.cartRate!=null && (t.cartRate*100)>=(+th.cartRate||0));
+  var hiCvr=(t.cvr!=null && (t.cvr*100)>=(+th.cvr||0));
+  var kpi=[
+    ['链接数',   t.n, false],
+    ['已上架',   t.live, false],
+    ['总展现',   Math.round(t.impr), false],
+    ['总点击',   Math.round(t.clicks), false],
+    ['整体点击率', t.ctr!=null? pct(t.ctr):'—', hiCtr],
+    ['总花费',   money(t.cost), false],
+    ['CPC',      t.cpc!=null? money(t.cpc):'—', false],
+    ['总加购',   t.cart, false],
+    ['整体加购率', t.cartRate!=null? pct(t.cartRate):'—', hiCart],
+    ['总订单',   t.orders, false],
+    ['整体转化率', t.cvr!=null? pct(t.cvr):'—', hiCvr],
+    ['整体客单价', t.aov!=null? money(t.aov):'—', false]
+  ];
+  var k='';
+  kpi.forEach(function(x){ k+='<div class="'+(x[2]?'hi':'')+'"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'; });
+  return '<div class="lkbox lksum" id="lkw-sum">'+
+    '<div class="lkw-h">'+
+      '<span class="id">汇总</span>'+
+      '<span class="vv">全批横向对比 · '+t.n+' 条链接</span>'+
+      '<span class="meta">'+'统计口径：全部已录数据'+'　·　其中 '+t.withData+' 条已有数据</span>'+
+    '</div>'+
+    '<div class="lkw-kpi">'+k+'</div>'+
+    /* 数据选款指标：填了才参与判定，留空＝不判这一项（与创意图筛选同一套逻辑） */
+    '<div class="lk-flt-t">数据选款指标<span>填了才参与判定 · 留空＝该项不判</span></div>'+
+    '<div class="lk-flt">'+
+      '<div class="fld"><label>展现量 ≥</label><input type="number" min="0" id="lkThrImpr" data-lkthr="minImpr" value="'+(th.minImpr>0? th.minImpr : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>点击量 ≥</label><input type="number" min="0" id="lkThrClicks" data-lkthr="minClicks" value="'+(th.minClicks>0? th.minClicks : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>点击率 ≥（%）</label><input type="number" min="0" step="0.1" id="lkThrCtr" data-lkthr="ctr" value="'+(th.ctr>0? th.ctr : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>加购率 ≥（%）</label><input type="number" min="0" step="0.1" id="lkThrCart" data-lkthr="cartRate" value="'+(th.cartRate>0? th.cartRate : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>收藏率 ≥（%）</label><input type="number" min="0" step="0.1" id="lkThrFav" data-lkthr="favRate" value="'+(th.favRate>0? th.favRate : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>转化率 ≥（%）</label><input type="number" min="0" step="0.1" id="lkThrCvr" data-lkthr="cvr" value="'+(th.cvr>0? th.cvr : '')+'" placeholder="留空＝不判"></div>'+
+      '<div class="fld"><label>客单价 ≥（元）</label><input type="number" min="0" step="0.1" id="lkThrAov" data-lkthr="aov" value="'+(th.aov>0? th.aov : '')+'" placeholder="留空＝不判"></div>'+
+    '</div>'+
+    '<div style="font-size:12px;color:var(--mut);margin:0 0 8px">'+
+      '口径（分母统一用「点击」）：点击率＝点击÷展现　加购率＝加购÷点击　收藏率＝收藏÷点击　转化率＝订单÷点击　客单价＝成交金额÷订单。'+
+      '<b>门槛留空＝该指标不参与判定</b>；展现量/点击量不够＝样本不足，记「观察」，不判失败。'+
+    '</div>'+
+    '<div class="note w" style="margin:0 0 10px"><span class="ic">⚠</span><span><b>转化率可以看，但不能单独看。</b>'+
+      '海选期链接没权重、没评价，转化率天然低且噪声大——要跟加购率一起看：'+
+      '<b>加购高、转化低</b>＝想要但在等（价格/评价/运费）；<b>两者都低</b>＝款式方向就不对，别硬推。</span></div>'+
+    '<div class="tblwrap"><div class="scrollx">'+
+      '<table class="board" id="poolTable"></table>'+
+    '</div></div>'+
+    /* 指标说明：每列怎么算的，点开展开 */
+    '<details class="mhelp"><summary><b>指标说明</b> · 表里每列怎么算的，点开展开 / 再点收起</summary>'+
+      '<div class="mg">'+
+        '<p><b>已跑</b>：该链接已录数据的天数（记一天算一天，没录的不算）。</p>'+
+        '<p><b>总展现 / 总点击 / 总花费</b>：该链接已录数据的<b>全部累计</b>（不再除以天数），跟顶部 KPI 口径一致。</p>'+
+        '<p><i>点击率</i> ＝ 总点击 ÷ 总展现（加权：总量直接相除，不是各日的平均）。</p>'+
+        '<p><b>CPC</b> ＝ 总花费 ÷ 总点击。</p>'+
+        '<p><b>咨询 / 加购 / 收藏</b>：各日数字直接合计。</p>'+
+        '<p><i>加购率</i> ＝ 总加购 ÷ 总点击。</p>'+
+        '<p><i>收藏率</i> ＝ 总收藏 ÷ 总点击。</p>'+
+        '<p><b>成交订单 / 成交金额</b>：各日直接合计。</p>'+
+        '<p><i>转化率</i> ＝ 成交订单 ÷ 总点击。</p>'+
+        '<p><i>客单价</i> ＝ 成交金额 ÷ 成交订单（还没有订单＝—）。</p>'+
+        '<p><b>达成</b>：达标项数 ÷ 参与判定项数。展现量/点击量样本门槛<b>常驻</b>；其余指标<b>填了门槛才判、留空不判</b>。</p>'+
+        '<p><b>分流</b>：没录数据＝未开跑；样本不够＝观察（不判失败）；达成 ≥75%＝晋级；≥50%＝观察；否则＝淘汰。</p>'+
+        '<p><i>提醒</i>：量值看<b>总和</b>、率值看<b>加权</b>（分母统一「点击」，点击率用「展现」）；要看每天节奏，去各条链接自己的 sheet 看走势图。</p>'+
+      '</div>'+
+    '</details>'+
+    '<div class="verdict" id="poolVerdict"><b>分流结论</b><p>还没有链接数据。先在各自的 sheet 里记几天。</p></div>'+
+  '</div>';
+}
+
+function renderLkTabs(){
+  var box=$('lkTabs'); if(!box) return;
+  box.innerHTML='';
+  /* 第一个页签：测试链接定位（永远存在，没链接时也能建） */
+  var lb=document.createElement('button');
+  lb.className='lkt loc'+(state.lkActive===LOC_ID?' on':'');
+  lb.setAttribute('data-lk', LOC_ID);
+  lb.title='定这批链接押什么：编号/款式/货品策略/定价/SKU/词路/上架日/装配核对';
+  lb.innerHTML='<b>测试链接定位</b><em>'+state.links.length+' 条</em>';
+  box.appendChild(lb);
+  /* 第二页签：链接主图（有链接才出现） */
+  if(state.links.length){
+    var ib=document.createElement('button');
+    ib.className='lkt imgtab'+(state.lkActive===IMG_ID?' on':'');
+    ib.setAttribute('data-lk', IMG_ID);
+    ib.title='所有在测链接的主图 + 10 项指标';
+    ib.innerHTML='<b>链接主图</b><em>'+state.links.length+' 条</em>';
+    box.appendChild(ib);
+  }
+  /* 第三个页签：汇总（在链接主图之后） */
+  if(state.links.length){
+    var t=sumAgg();
+    var sb=document.createElement('button');
+    sb.className='lkt sum'+(state.lkActive===SUM_ID?' on':'');
+    sb.setAttribute('data-lk', SUM_ID);
+    sb.title='全部 '+t.n+' 条链接的横向汇总';
+    sb.innerHTML='<b>汇总</b><em>'+t.n+' 条 · '+t.up+' 晋级</em>';
+    box.appendChild(sb);
+  }
+  state.links.forEach(function(l){
+    var a=lkAgg(l), st=lkStage(l);
+    var b=document.createElement('button');
+    b.className='lkt'+(l.id===state.lkActive?' on':'');
+    b.setAttribute('data-lk', l.id);
+    b.title=l.name+(l.variant? ' · '+l.variant : '')+'　·　'+STAGE_TXT[st]+'　·　'+(a.n? a.n+' 天数据':'还没录数据');
+    b.innerHTML='<b>'+esc(l.name)+'</b>'+(l.variant? '<i>'+esc(l.variant)+'</i>' : '')+
+      '<span class="dot '+(a.n?'has':'no')+'"></span>';
+    box.appendChild(b);
+  });
+  var pos=$('lkPos');
+  if(pos){
+    if(state.lkActive===LOC_ID){ pos.textContent='定位 / 共 '+state.links.length+' 条'; }
+    else if(!state.links.length){ pos.textContent='0 / 0'; }
+    else if(state.lkActive===SUM_ID){ pos.textContent='汇总 / '+state.links.length+' 条'; }
+    else if(state.lkActive===IMG_ID){ pos.textContent='主图 / '+state.links.length+' 条'; }
+    else{
+      var idx=-1;
+      state.links.forEach(function(l,i){ if(l.id===state.lkActive) idx=i; });
+      pos.textContent=((idx<0?0:idx+1))+' / '+state.links.length;
+    }
+  }
+}
+function renderLkPane(){
+  var box=$('lkPane'); if(!box) return;
+  if(state.lkActive===LOC_ID){
+    box.innerHTML=locSheetHtml();
+    renderLinks();
+    return;
+  }
+  if(state.lkActive===IMG_ID){
+    box.innerHTML=imgSheetHtml();
+    return;
+  }
+  if(state.lkActive===SUM_ID && state.links.length){
+    box.innerHTML=sumSheetHtml();
+    renderPool();
+    return;
+  }
+  var cur=null;
+  state.links.forEach(function(x){ if(x.id===state.lkActive) cur=x; });
+  if(!cur && state.links.length){ cur=state.links[0]; state.lkActive=cur.id; }
+  if(!cur){
+    box.innerHTML='<div class="lk-empty">还没有链接 —— 先在 ⑧ 增加 / 带入，这里会为每条链接自动开一个 sheet 页签。</div>';
+    return;
+  }
+  try{
+    box.innerHTML=lkCardOne(cur);
+  }catch(err){
+    box.innerHTML='<div class="lk-empty" style="border-left:3px solid #c0392b;color:#a8452c;text-align:left">'+
+      '<b>⚠ 这条链接（'+(cur.name||'?')+'）的 sheet 没能画出来：</b><br>'+
+      (err&&err.message? esc(err.message) : err)+
+      '<br><br>建议先导出备份，再在 ⑧ 里把它删掉重建；其它页签不受影响。</div>';
+  }
+}
+function renderLkStatus(){
+  var el=$('lkStatus'); if(!el) return;
+  if(!state.links.length){
+    el.className='lk-status empty';
+    el.innerHTML='还没有链接 —— 先在 ⑧ 增加 / 带入，这里会自动为每条链接开一个窗口。';
+    return;
+  }
+  var withData=0, withImg=0;
+  state.links.forEach(function(l){
+    if(lkAgg(l).n) withData++;
+    if(l.ready && l.ready.img) withImg++;
+  });
+  el.className='lk-status';
+  el.innerHTML='已为 <b>'+state.links.length+'</b> 条链接各开一个窗口　·　其中 <b>'+withData+'</b> 条已有数据'+
+    (withData<state.links.length? '（'+(state.links.length-withData)+' 条还没录）' : '')+
+    '　·　统计口径：全部已录数据';
+}
+/* 只重绘图表区：切指标/切图形时不整卡重绘，避免把正在填的表单冲掉 */
+function repaintLkCharts(){
+  state.links.forEach(function(l){
+    var wrap=$('lkw-'+l.id); if(!wrap) return;
+    var cv=wrap.querySelector('[data-chartbox]');
+    if(cv) cv.innerHTML=chartSVG(lkSeries(l), state.lkMetric, state.lkType, LMETRICS, '这条链接在这个窗口内还没有数据');
+    Array.prototype.forEach.call(wrap.querySelectorAll('[data-lm]'), function(b){
+      b.classList.toggle('on', b.getAttribute('data-lm')===state.lkMetric);
+    });
+    Array.prototype.forEach.call(wrap.querySelectorAll('[data-lt]'), function(b){
+      b.classList.toggle('on', b.getAttribute('data-lt')===state.lkType);
+    });
+  });
+}
+function renderLkCards(){
+  if(state.links.length){
+    var ok=(state.lkActive===SUM_ID || state.lkActive===LOC_ID || state.lkActive===IMG_ID);
+    state.links.forEach(function(l){ if(l.id===state.lkActive) ok=true; });
+    if(!ok) state.lkActive=LOC_ID;   /* 找不到就落定位 */
+  }else{
+    state.lkActive=LOC_ID;   /* 没链接时必停在定位页，否则连「增加链接」都点不到 */
+  }
+  renderLkStatus();
+  renderLkTabs();
+  renderLkPane();
+  renderPool();
+  updateHeroM2();
+}
+
+/* --- 海选看板（横向对比） --- */
+function renderPool(){
+  var tb=$('poolTable'); if(!tb) return;   /* 只有汇总 sheet 里有这张表 */
+  var win=+state.lkWin||0, th=state.lkThr||{}, std=state.std||{};
+  var info=$('poolInfo');
+  if(info) info.textContent='口径：'+(win>0? ('每条链接自己上架后第 1–'+win+' 天') : '全部已录数据')+
+    '　·　样本门槛：点击 ≥ '+(std.minClicks||0)+'、展现 ≥ '+(std.minImpr||0)+'（不足记「观察」，不判失败）';
+  /* 与单链接 sheet 的指标完全对齐：总量 + 合计 + 加权率（量值看总和，率值才加权） */
+  var cols=[
+    ['总展现','int',  function(a){ return a.impr; },     function(){ return false; }],
+    ['总点击','int',  function(a){ return a.clicks; },   function(){ return false; }],
+    ['点击率','pct',  function(a){ return a.ctr; },      function(a){ return a.ctr!=null && (a.ctr*100)>=(+th.ctr||0); }],
+    ['总花费','num',  function(a){ return a.cost; },     function(){ return false; }],
+    ['CPC','num',     function(a){ return a.cpc; },      function(){ return false; }],
+    ['咨询','int',    function(a){ return a.cons; },     function(){ return false; }],
+    ['加购','int',    function(a){ return a.cart; },     function(){ return false; }],
+    ['加购率','pct',  function(a){ return a.cartRate; }, function(a){ return a.cartRate!=null && (a.cartRate*100)>=(+th.cartRate||0); }],
+    ['收藏','int',    function(a){ return a.fav; },      function(){ return false; }],
+    ['收藏率','pct',  function(a){ return a.favRate; },  function(a){ return a.favRate!=null && th.favRate>0 && (a.favRate*100)>=(+th.favRate||0); }],
+    ['成交订单','int',function(a){ return a.orders; },   function(){ return false; }],
+    ['转化率','pct',  function(a){ return a.cvr; },      function(a){ return a.cvr!=null && (a.cvr*100)>=(+th.cvr||0); }],
+    ['成交金额','num',function(a){ return a.gmv; },      function(){ return false; }],
+    ['客单价','num',  function(a){ return a.aov; },      function(a){ return a.aov!=null && th.aov>0 && a.aov>=(+th.aov||0); }]
+  ];
+  var h='<thead><tr><th>链接</th><th>货品策略</th><th>上架日</th><th>已跑</th>';
+  cols.forEach(function(c){ h+='<th style="text-align:right">'+c[0]+'</th>'; });
+  h+='<th style="text-align:center">达成</th><th style="text-align:center">分流</th></tr></thead><tbody>';
+  if(!state.links.length){
+    tb.innerHTML=h+'<tr><td colspan="'+(cols.length+6)+'" style="text-align:center;color:#847b68;padding:20px">还没有链接，先在「测试链接定位」建第一批</td></tr></tbody>';
+    renderPoolVerdict([]);
+    return;
+  }
+  var rows=[];
+  state.links.forEach(function(l){ rows.push({l:l, r:lkScore(l), v:poolVerdictOf(l)}); });
+  rows.sort(function(a,b){ if(b.r.hit!==a.r.hit) return b.r.hit-a.r.hit; return (b.r.a.ctr||0)-(a.r.a.ctr||0); });
+  rows.forEach(function(o){
+    var l=o.l, a=o.r.a;
+    h+='<tr><td style="white-space:nowrap"><b class="lnk" data-goto="'+l.id+'" title="打开这条链接的 sheet">'+esc(l.name)+'</b>　'+esc(l.variant||'')+'</td>'+
+       '<td style="white-space:nowrap">'+esc(l.goods||'')+'</td>'+
+       '<td style="white-space:nowrap">'+(l.launch||'—')+'</td>'+
+       '<td style="text-align:right">'+(a.n? a.n+' 天':'—')+'</td>';
+    cols.forEach(function(c){
+      var v=c[2](a);
+      var txt=(v==null||!isFinite(v))? '—' : (c[1]==='pct'? (v*100).toFixed(2)+'%' : (c[1]==='num'? v.toFixed(2) : String(Math.round(v))));
+      h+='<td style="text-align:right'+(c[3](a)? ';font-weight:800;color:#1f5544':'')+'">'+txt+'</td>';
+    });
+    var vc=(o.v==='up')? 'live' : (o.v==='out'? 'out' : (o.v==='watch'? 'ready' : 'wait'));
+    h+='<td style="text-align:center"><b>'+o.r.hit+'/'+(o.r.total||4)+'</b></td>'+
+       '<td style="text-align:center"><span class="stg '+vc+'">'+VERD_TXT[o.v]+'</span></td></tr>';
+  });
+  tb.innerHTML=h+'</tbody>';
+  renderPoolVerdict(rows);
+}
+function renderPoolVerdict(rows){
+  var box=$('poolVerdict'); if(!box) return;
+  if(!rows || !rows.length){
+    box.innerHTML='<b>分流结论</b><p>还没有链接数据。先在窗口里记几天。</p>';
+    return;
+  }
+  var up=0,watch=0,out=0,none=0,best=null;
+  rows.forEach(function(o){
+    if(o.v==='up') up++; else if(o.v==='watch') watch++; else if(o.v==='out') out++; else none++;
+    if(o.r.a.n && (!best || o.r.hit>best.r.hit || (o.r.hit===best.r.hit && (o.r.a.ctr||0)>(best.r.a.ctr||0)))) best=o;
+  });
+  var txt='晋级 <b>'+up+'</b> 条、观察 <b>'+watch+'</b> 条、淘汰 <b>'+out+'</b> 条'+(none? ('、未开跑 '+none+' 条') : '')+'。';
+  var adv='';
+  if(best){
+    var ba=best.r.a;
+    adv='当前最靠前：<b>'+best.l.name+'</b>（达成 '+best.r.hit+'/'+(best.r.total||4)+'，点击率 '+(ba.ctr!=null? pct(ba.ctr):'—')+
+        '，加购率 '+(ba.cartRate!=null? pct(ba.cartRate):'—')+
+        '，转化率 '+(ba.cvr!=null? pct(ba.cvr):'—')+
+        '，客单价 '+(ba.aov!=null? money(ba.aov):'—')+'）。';
+  }
+  if(up===0 && out>0) adv+='<br>没有一条达标——先别加预算，检查是不是词路太宽、图与卖点不匹配。';
+  if(watch>up && watch>0) adv+='<br>多数停在「观察」：样本还不够，再跑 3–5 天再判，别急着自己拍板挑一条。';
+  box.innerHTML='<b>分流结论</b><p>'+txt+'<br>'+adv+'</p>';
+}
+
+function renderLkStd(){
+  var th=state.lkThr||{}, e;
+  e=$('lkThrCtr');   if(e) e.value=(th.ctr>0? th.ctr : '');
+  e=$('lkThrCart');  if(e) e.value=(th.cartRate>0? th.cartRate : '');
+  e=$('lkThrCvr');   if(e) e.value=(th.cvr>0? th.cvr : '');
+  e=$('lkMinClicks'); if(e) e.textContent=(state.std.minClicks||0);
+  e=$('lkMinImpr');   if(e) e.textContent=(state.std.minImpr||0);
+  var w=+state.lkWin||0, box=$('lkWin');
+  if(box) Array.prototype.forEach.call(box.querySelectorAll('button'), function(b){
+    b.classList.toggle('on', (+b.getAttribute('data-w'))===w);
+  });
+}
+function renderModule2(){ renderLkStd(); renderLinks(); renderLkCards(); }
+
+/* --- 交互：链接窗口（全部委托在 #lkCards 上） --- */
+$('lkTabs').addEventListener('click', function(e){
+  var b=e.target.closest('[data-lk]');
+  if(!b) return;
+  state.lkActive=b.getAttribute('data-lk');
+  save(); renderLkTabs(); renderLkPane(); renderLkStatus();
+});
+document.querySelector('.lk-step').addEventListener('click', function(e){
+  var b=e.target.closest('[data-lkstep]');
+  if(!b || !state.links.length) return;
+  var seq=[LOC_ID, IMG_ID, SUM_ID];   /* 与页签渲染顺序一致：定位 → 链接主图 → 汇总 → 各链接 */
+  state.links.forEach(function(l){ seq.push(l.id); });
+  var idx=seq.indexOf(state.lkActive);
+  if(idx<0) idx=0;
+  idx=(idx + (+b.getAttribute('data-lkstep')) + seq.length) % seq.length;
+  state.lkActive=seq[idx];
+  save(); renderLkTabs(); renderLkPane(); renderLkStatus();
+});
+$('lkPane').addEventListener('click', function(e){
+  /* 记一条 */
+  var add=e.target.closest('[data-addrow]');
+  if(add){
+    var lid=add.getAttribute('data-addrow');
+    var card=$('lkw-'+lid); if(!card) return;
+    function v(k){ var el=card.querySelector('[data-f="'+k+'"]'); return el? el.value : ''; }
+    var d=v('date') || todayYmd();
+    state.linkRows.push({
+      id:'r'+Date.now()+'_'+Math.random().toString(36).slice(2,5), lid:lid, date:d,
+      impr:num(v('impr')), clicks:num(v('clicks')), cost:num(v('cost')), cons:num(v('cons')),
+      cart:num(v('cart')), fav:num(v('fav')), orders:num(v('orders')), gmv:num(v('gmv')), note:v('note')
+    });
+    save(); refreshCard(lid); renderPool(); updateHeroM2();
+    var lk=null; state.links.forEach(function(x){ if(x.id===lid) lk=x; });
+    toast((lk? lk.name : '这条链接')+' 已记一条');
+    return;
+  }
+  /* 删一条 */
+  var dlr=e.target.closest('[data-dlr]');
+  if(dlr){
+    var rid=dlr.getAttribute('data-dlr');
+    state.linkRows=state.linkRows.filter(function(r){ return r.id!==rid; });
+    var lidOf=null; state.linkRows.forEach(function(r){ if(r.id===rid) lidOf=r.lid; });
+    save();
+    if(lidOf) refreshCard(lidOf); else renderLkCards();
+    renderPool(); updateHeroM2();
+    toast('已删除一条'); return;
+  }
+  /* 补示例 */
+  var fill=e.target.closest('[data-fill]');
+  if(fill){
+    var fid=fill.getAttribute('data-fill');
+    var l=null; state.links.forEach(function(x){ if(x.id===fid) l=x; });
+    if(!l) return;
+    /* 锚点＝该链接当前最早的数据日期；往它前面倒推 7 天（无缝续上、永不重叠）。
+       还没有任何数据时，锚点＝今天，补最近 7 天（含今天）。 */
+    var minD=null;
+    state.linkRows.forEach(function(r){ if(r.lid===l.id && r.date && (minD===null || r.date<minD)) minD=r.date; });
+    var anchor, off;
+    if(minD){ anchor=minD; off=-7; } else { anchor=todayYmd(); off=-6; }
+    var todayStr=todayYmd();
+    var price=(+l.price)||39.9, added=0, firstD='', lastD='';
+    for(var d=0; d<7; d++){
+      var date=addDays(anchor, off+d);
+      if(date>todayStr) continue;
+      var dup=false;
+      state.linkRows.forEach(function(r){ if(r.lid===l.id && r.date===date) dup=true; });
+      if(dup) continue;
+      var impr=650+Math.round(Math.random()*260);
+      var clicks=Math.round(impr*(0.036+Math.random()*0.022));
+      var cart=Math.max(0, Math.round(clicks*(0.06+Math.random()*0.06)));
+      var fav=Math.max(0, Math.round(clicks*(0.03+Math.random()*0.04)));
+      var orders=(Math.random()<0.55? 1 : 0);
+      state.linkRows.push({
+        id:'r'+Date.now()+'_'+d+'_'+Math.random().toString(36).slice(2,4), lid:l.id, date:date,
+        impr:impr, clicks:clicks, cost:+(clicks*(1.1+Math.random()*0.5)).toFixed(2),
+        cons:(Math.random()<0.6? 1+Math.round(Math.random()*2) : 0),
+        cart:cart, fav:fav, orders:orders,
+        gmv:+(orders*price*(1+Math.random()*0.3)).toFixed(2),
+        note:(d===2? '有人问厚度和掉毛' : '')
+      });
+      added++;
+      if(!firstD || date<firstD) firstD=date;
+      if(date>lastD) lastD=date;
+    }
+    save(); refreshCard(fid); renderPool(); updateHeroM2();
+    toast(added? ('已补 '+added+' 天示例（'+firstD+' ～ '+lastD+'，接在最早数据前）') : '没有可补的日期（这段已有数据）');
+    return;
+  }
+  /* 切指标 */
+  var go=e.target.closest('[data-goto]');
+  if(go){ state.lkActive=go.getAttribute('data-goto'); save(); renderLkTabs(); renderLkPane(); renderLkStatus(); return; }
+  var lm=e.target.closest('[data-lm]');
+  if(lm){ state.lkMetric=lm.getAttribute('data-lm'); save(); repaintLkCharts(); return; }
+  /* 切折线/柱状 */
+  var lt=e.target.closest('[data-lt]');
+  if(lt){ state.lkType=lt.getAttribute('data-lt'); save(); repaintLkCharts(); return; }
+});
+
+/* --- 交互：测试链接定位 sheet（动态渲染，全部用委托） --- */
+var lkAssetT={lid:'', key:''};
+function lkFind(lid){
+  var r=null; state.links.forEach(function(x){ if(x.id===lid) r=x; });
+  return r;
+}
+function lkSetAsset(l, key, url){
+  var m3=key.match(/^comp(\d)$/), m5=key.match(/^micro(\d)$/);
+  if(key==='main') l.imgMain=url;
+  else if(m3){ l.comp=l.comp||['','','']; l.comp[+m3[1]]=url; }
+  else if(m5){ l.micro=l.micro||['','','','','']; l.micro[+m5[1]]=url; }
+}
+function lkGetAsset(l, key){
+  var m3=key.match(/^comp(\d)$/), m5=key.match(/^micro(\d)$/);
+  if(key==='main') return l.imgMain||'';
+  if(m3) return (l.comp||[])[+m3[1]]||'';
+  if(m5) return (l.micro||[])[+m5[1]]||'';
+  return '';
+}
+async function lkFillAsset(lid, key, file){
+  var l=lkFind(lid); if(!l) return;
+  var maxPx = (key==='main')? 600 : ((key.indexOf('micro')===0 && l.microRatio==='3:4')? 560 : 420);
+  var r=await readImage(file, maxPx);
+  if(!r || !r.url){ toast('读图失败，换一张试试'); return; }
+  l=lkFind(lid); if(!l){ toast('该链接已被删除'); return; }
+  lkSetAsset(l, key, r.url);
+  save(); refreshCard(lid); renderLkTabs();
+  toast((key==='main'?'主图':(key.indexOf('comp')===0?'对标主图':'微详情'))+' 已更新');
+}
+$('lkAssetFile') && $('lkAssetFile').addEventListener('change', function(){
+  var f=this.files[0]; this.value='';
+  if(!f || !lkAssetT.lid) return;
+  lkFillAsset(lkAssetT.lid, lkAssetT.key, f);
+});
+function doAddLink(){
+  var nl=newLink();
+  state.links.push(nl);
+  state.lkActive=nl.id;               /* 新链接直接切过去 */
+  save(); renderLkCards();
+  toast('已加一条链接，已切到它的 sheet');
+}
+function doGenLinks(){
+  var std=state.std||{}, stat=[];
+  state.creatives.forEach(function(c){
+    var st=creStat(c);
+    if(!st.n || st.ctr==null) return;
+    if(st.clicks<(+std.minClicks||0) || st.impr<(+std.minImpr||0)) return;
+    stat.push({c:c, st:st});
+  });
+  if(!stat.length){ toast('模块一还没有够样本的创意——先去 ⑥ 记数据'); return; }
+  var avg=0; stat.forEach(function(x){ avg+=x.st.ctr; }); avg/=stat.length;
+  var win=stat.filter(function(x){ return x.st.ctr>=avg; }).sort(function(a,b){ return b.st.ctr-a.st.ctr; });
+  var have={}; state.links.forEach(function(l){ if(l.cid) have[l.cid]=1; });
+  var added=0;
+  win.forEach(function(x){
+    if(have[x.c.id]) return;
+    var l=newLink();
+    l.cid=x.c.id; l.variant=x.c.variant||''; l.name=nextLinkName();
+    state.links.push(l); have[x.c.id]=1; added++;
+    if(added===1) state.lkActive=l.id;
+  });
+  save(); renderLkCards();
+  toast(added? ('已带入 '+added+' 条（点击率 ≥ 均值 '+(avg*100).toFixed(2)+'%）') : '胜出版都已在清单里了');
+}
+function doDemoLinks(){
+  var vs=['方格纹','纯色','带边条'], today=new Date();
+  vs.forEach(function(v,i){
+    var l=newLink();
+    l.variant=v;
+    l.goods=(i===2? '打样新品' : '现有货裂变');
+    l.price=[39.9,35.9,45.0][i];
+    l.sku='3 色 × 4 规格';
+    l.kw='入户门地垫 防滑';
+    l.name=nextLinkName();
+    l.r={img:true,title:true,price:true,sku:true,detail:(i<2),stock:(i<2)};
+    if(i<2){ l.launch=ymd(new Date(today.getTime()-((2-i)*86400000))); }
+    state.links.push(l);
+    if(i===0) state.lkActive=l.id;
+  });
+  save(); renderLkCards();
+  toast('已填入 3 条示例链接（错峰上架）');
+}
+function doDelLink(idx){
+  var l=state.links[idx];
+  if(!l) return;
+  if(!confirm('删除链接 '+l.name+' ？该链接已记的按日数据会一并删除。')) return;
+  state.linkRows=state.linkRows.filter(function(r){ return r.lid!==l.id; });
+  state.links.splice(idx,1);
+  if(state.lkActive===l.id) state.lkActive=(state.links.length? SUM_ID : LOC_ID);
+  save(); renderLkCards();
+  toast('已删除 '+l.name);
+}
+
+$('lkPane').addEventListener('click', function(e){
+  /* 定位 sheet 的三个按钮 */
+  var act=e.target.closest('[data-act]');
+  if(act){
+    var a=act.getAttribute('data-act');
+    if(a==='addLink') doAddLink();
+    else if(a==='genLinks') doGenLinks();
+    else if(a==='demoLinks') doDemoLinks();
+    return;
+  }
+  /* 微详情比例切换 */
+  var mrBtn=e.target.closest('[data-mr]');
+  if(mrBtn){
+    var ml=lkFind(mrBtn.getAttribute('data-lid'));
+    if(ml){ ml.microRatio=mrBtn.getAttribute('data-mr'); save(); refreshCard(ml.id); toast('微详情改为 '+ml.microRatio); }
+    return;
+  }
+  /* 视觉资产：清除 */
+  var clr=e.target.closest('[data-clr]');
+  if(clr){
+    var cw=clr.closest('[data-slot]'); if(!cw) return;
+    var clid=cw.getAttribute('data-lid');
+    var l0=lkFind(clid); if(!l0) return;
+    lkSetAsset(l0, clr.getAttribute('data-clr'), '');
+    save(); refreshCard(clid); toast('已清除'); return;
+  }
+  /* 视觉资产：点击上传 */
+  var slot=e.target.closest('[data-slot]');
+  if(slot){
+    lkAssetT={lid:slot.getAttribute('data-lid'), key:slot.getAttribute('data-slot')};
+    var fi=$('lkAssetFile'); if(fi){ fi.value=''; fi.click(); }
+    return;
+  }
+  /* 删链接 */
+  var dl=e.target.closest('[data-dl]');
+  if(dl){ doDelLink(+dl.getAttribute('data-dl')); return; }
+});
+$('lkPane').addEventListener('input', function(e){
+  var t=e.target;
+  /* 需求定位 / 对标店名 */
+  if(t.dataset && t.dataset.pos!==undefined){
+    var lp=lkFind(t.dataset.lid);
+    if(lp){ lp.pos=t.value; save(); }
+    return;
+  }
+  if(t.dataset && t.dataset.txt!==undefined){
+    var lt=lkFind(t.dataset.lid);
+    if(lt){ lt[t.dataset.txt]=t.value; save(); }
+    return;
+  }
+  if(t.dataset && t.dataset.compname!==undefined){
+    var lc=lkFind(t.dataset.lid);
+    if(lc){ lc.compName=lc.compName||['','','']; lc.compName[+t.dataset.compname]=t.value; save(); renderLkTabs(); }
+    return;
+  }
+  if(!t.closest('#linkBody')) return;
+  if(!t.dataset || t.dataset.lf===undefined) return;
+  var i=+t.dataset.li, f=t.dataset.lf;
+  if(!state.links[i]) return;
+  state.links[i][f]=(f==='price')? num(t.value) : t.value;
+  save();
+  if(f==='name' || f==='launch'){
+    var l=state.links[i], st=lkStage(l), tr=t.closest('tr'), cell=tr? tr.querySelector('.stg') : null;
+    if(cell){
+      var rd=lkReady(l);
+      cell.className='stg '+st;
+      cell.textContent=STAGE_TXT[st]+((rd>0 && rd<6)? ' '+rd+'/6' : '');
+    }
+    renderLinkWarn(); renderLkTabs(); updateHeroM2();
+  }
+});
+$('lkPane').addEventListener('change', function(e){
+  var t=e.target;
+  if(!t.closest('#linkBody')) return;
+  if(t.dataset && t.dataset.rk!==undefined){
+    var i=+t.dataset.li;
+    if(!state.links[i]) return;
+    var lk=state.links[i];
+    lk.r=lk.r||{};
+    lk.r[t.dataset.rk]=!!t.checked;
+    save();
+    var lab=t.closest('label'); if(lab) lab.classList.toggle('on', !!t.checked);
+    var trw=t.closest('tr'), cell=trw? trw.querySelector('.stg') : null;
+    if(cell){
+      var st=lkStage(lk), rd=lkReady(lk);
+      cell.className='stg '+st;
+      cell.textContent=STAGE_TXT[st]+((rd>0 && rd<6)? ' '+rd+'/6' : '');
+    }
+    renderLinkWarn(); renderLkTabs(); updateHeroM2();
+    return;
+  }
+  if(t.dataset && t.dataset.lf!==undefined){
+    var j=+t.dataset.li, f=t.dataset.lf;
+    if(!state.links[j]) return;
+    state.links[j][f]=(f==='price')? num(t.value) : t.value;
+    save(); renderLinkWarn(); renderLkTabs(); updateHeroM2();
+  }
+});
+/* 筛选条在汇总页里动态渲染，事件一律委托 */
+$('lkPane').addEventListener('click', function(e){
+  var b=e.target.closest('[data-w]');
+  if(!b) return;
+  state.lkWin=+b.getAttribute('data-w'); save();
+  renderLkPane();            /* 窗口变了，KPI/表/都重算 */
+  renderLkTabs(); updateHeroM2();
+});
+$('lkPane').addEventListener('input', function(e){
+  var t=e.target;
+  if(!t.dataset || t.dataset.lkthr===undefined) return;
+  state.lkThr=state.lkThr||{};
+  state.lkThr[t.dataset.lkthr]=num(t.value);
+  save();
+  /* 只重算表格和页签，不重绘汇总页——否则正在输入的框会失焦 */
+  renderPool(); renderLkTabs(); updateHeroM2();
+});
+
+/* ---------- 备份 ---------- */
+$('expJson').addEventListener('click', function(){
+  var blob=new Blob([JSON.stringify(state,null,2)], {type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='测图作战台_备份_'+todayYmd()+'.json'; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); },1500);
+  toast('已导出 JSON 备份');
+});
+$('expCsv').addEventListener('click', function(){
+  var byId={}; state.creatives.forEach(function(c){ byId[c.id]=c.name; });
+  var lines=['日期,版本,展现,点击,点击率,花费,CPC,平均位置,咨询数,备注'];
+  state.rows.forEach(function(r){
+    var ctr=rowCtr(r), cpc=rowCpc(r);
+    lines.push([r.date, byId[r.cid]||'', r.impr, r.clicks, ctr!==null?(ctr*100).toFixed(2)+'%':'', r.cost,
+      cpc!==null?cpc.toFixed(2):'', r.pos||'', r.cons, '"'+(r.note||'').replace(/"/g,'""')+'"'].join(','));
+  });
+  var blob=new Blob(['\ufeff'+lines.join('\n')], {type:'text/csv;charset=utf-8'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='测图数据_'+todayYmd()+'.csv'; a.click();
+  setTimeout(function(){ URL.revokeObjectURL(a.href); },1500);
+  toast('已导出 CSV');
+});
+$('impBtn').addEventListener('click', function(){ $('impFile').click(); });
+$('impFile').addEventListener('change', function(){
+  var f=this.files[0]; if(!f) return;
+  var fr=new FileReader();
+  fr.onload=function(){
+    try{
+      var o=JSON.parse(fr.result);
+      if(!o || !o.std) throw new Error('格式不对');
+      var d=defaults();
+      state={ std:Object.assign(d.std,o.std), creatives:o.creatives||[], rows:o.rows||[], checks:o.checks||{},
+              groups:o.groups||[], activeGroup:o.activeGroup||'', board:o.board||d.board,
+              metric:o.metric||d.metric, chartType:o.chartType||d.chartType,
+              tab:(typeof o.tab==='number'? o.tab : 0),
+              links:o.links||[], linkRows:o.linkRows||[],
+              lkWin:(typeof o.lkWin==='number'? o.lkWin : 7),
+              lkThr:Object.assign({ctr:4,cons:3,cart:2}, o.lkThr||{}),
+              pg:o.pg||DEF_PAGE };
+      save(); ensureGroups(); renderAll(); goPage(state.pg);
+      toast('已导入备份（两个模块都恢复）');
+    }catch(e){ toast('导入失败：不是本台的备份文件'); }
+  };
+  fr.readAsText(f);
+  this.value='';
+});
+$('clearAll').addEventListener('click', function(){
+  if(!confirm('清空全部创意、海选链接与所有数据？此操作不可恢复（建议先导出备份）。')) return;
+  state=defaults();
+  clearTimeout(_saveTimer);
+  cacheLocal();
+  var after=function(){ ensureGroups(); renderAll(); goPage(DEF_PAGE); toast('已清空（本账号服务端+本机缓存）'); };
+  if(accountId){
+    putStateNow().then(after, after);
+  }else after();
+});
+
+/* ---------- 启动 ---------- */
+function renderAll(){ renderStd(); renderPlan(); renderCreatives(); renderTable(); renderSummary(); renderChecks(); renderBoard(); renderTestList(); renderModule2(); }
+
+document.body.classList.add('app-locked');
+applyAccountUI();
+(function(){
+  var inp=document.getElementById('acctInput');
+  try{ var last=localStorage.getItem(ACCT_KEY); if(last && inp) inp.value=last; }catch(e){}
+  document.getElementById('btnLogin').addEventListener('click', function(){ enterAccount(inp.value); });
+  inp.addEventListener('keydown', function(e){ if(e.key==='Enter') enterAccount(inp.value); });
+  document.getElementById('btnLogout').addEventListener('click', logoutAccount);
+})();
+</script>
+</body>
+</html>
